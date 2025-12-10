@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Returns a formatted set of questions from an Omniscript to power an Agentforce Conversation</description>
+    <developerName>OmniscriptHandler</developerName>
+    <invocationTarget>AgentForceOmniscriptHandler</invocationTarget>
+    <invocationTargetType>apex</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+    <masterLabel>OmniscriptHandler</masterLabel>
+</GenAiFunction>

@@ -1,0 +1,21 @@
+{
+  "required" : [ "targetId" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "actionCadenceStepTrackerId" : {
+      "title" : "actionCadenceStepTrackerId",
+      "description" : "Stores the ID of the action cadence step tracker that is passed into the flow.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "targetId" : {
+      "title" : "targetId",
+      "description" : "Stores the ID of the target passed into the flow. It can be a Lead ID, Contact ID, or the Person Contact ID for a Person Account.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

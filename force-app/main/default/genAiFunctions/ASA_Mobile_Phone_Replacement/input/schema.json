@@ -1,0 +1,28 @@
+{
+  "required" : [ "ContactId", "DamageDetails", "PhoneModel" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "ContactId" : {
+      "title" : "ContactId",
+      "description" : "Contact Id of the user making the request.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "DamageDetails" : {
+      "title" : "DamageDetails",
+      "description" : "Details related to liquid or physical damage",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "PhoneModel" : {
+      "title" : "PhoneModel",
+      "description" : "Brand and model of the damaged phone",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

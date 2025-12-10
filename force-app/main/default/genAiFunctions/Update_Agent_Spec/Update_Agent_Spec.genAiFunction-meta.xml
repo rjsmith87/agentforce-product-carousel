@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Updates the agent specification for a given agent ID, call this action if the user want to update the job specificaions that was generated.</description>
+    <developerName>Update_Agent_Spec</developerName>
+    <invocationTarget>AgentSpecUpdater</invocationTarget>
+    <invocationTargetType>apex</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+    <masterLabel>Update Agent Spec</masterLabel>
+</GenAiFunction>

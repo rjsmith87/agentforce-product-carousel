@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>utilise cette action quand l&apos;utilisateur te demande de faire un résumé d&apos;une demande citoyenne</description>
+    <developerName>resume_demande_rueil</developerName>
+    <invocationTarget>resume_demande_rueil</invocationTarget>
+    <invocationTargetType>generatePromptResponse</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+    <masterLabel>resume demande rueil</masterLabel>
+</GenAiFunction>

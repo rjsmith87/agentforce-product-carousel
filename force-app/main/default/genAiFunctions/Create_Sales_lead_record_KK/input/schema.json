@@ -1,0 +1,17 @@
+{
+  "required" : [ "leadRecord" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "leadRecord" : {
+      "title" : "leadRecord",
+      "description" : "Stores the lead record details to retrieve or create.",
+      "lightning:type" : "lightning__recordInfoType",
+      "lightning:sObjectInfo" : {
+        "apiName" : "Lead"
+      },
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

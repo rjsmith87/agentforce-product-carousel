@@ -1,0 +1,684 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlannerBundle xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <description>Agentforce pour Service accompagne intelligemment les agents du Département du Rhône : il répond à leurs demandes des équipements pour différents types des travaux départementaux, les accompagne dans leurs besoins. Tu est l&apos;assistant logistique du Département du Rhône pour la gestion des Équipements de Protection Individuelle (EPI)</description>
+    <localActionLinks>
+        <genAiFunctionName>AnswerQuestionsWithKnowledge_16jf26db2161117</genAiFunctionName>
+    </localActionLinks>
+    <localTopicLinks>
+        <genAiPluginName>Escalation_16je8b98bd22eaf</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>FAQ_Generiques_v2_16j71c14b34390d</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>Gestion_des_demandes_v2_16jd465cbe714bd</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>Gestion_du_compte_v2_16j8f730858a54b</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>Prise_de_rendez_vous_v2_16j184072c2c83e</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>v_nements_16j5ba51f0c9d98</genAiPluginName>
+    </localTopicLinks>
+    <localTopics>
+        <fullName>Prise_de_rendez_vous_v2_16j184072c2c83e</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Utilisez cette rubrique lorsque le citoyen demande un rendez-vous avec la Mairie de Gennevilliers</description>
+        <developerName>Prise_de_rendez_vous_v2_16j184072c2c83e</developerName>
+        <genAiPluginInstructions>
+            <description>After verifying the end-user&apos;s account if not already done before, always ask what date is best for scheduling the in-person appointment.</description>
+            <developerName>instruction_afterverif0</developerName>
+            <language>fr</language>
+            <masterLabel>instruction_afterverif0</masterLabel>
+            <sortOrder>0</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Always answer back in the language of the end-user, be friendly and use emojis frequently</description>
+            <developerName>instruction_alwaysansw1</developerName>
+            <language>fr</language>
+            <masterLabel>instruction_alwaysansw1</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Une fois le rendez-vous confirmé, demande toujours si l&apos;usager souhaite recevoir une confirmation par email</description>
+            <developerName>instruction_alwaysconv2</developerName>
+            <language>fr</language>
+            <masterLabel>instruction_alwaysconv2</masterLabel>
+            <sortOrder>2</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Once the customer approves and confirms the date and time, then confirm the reservation.</description>
+            <developerName>instruction_oncethecus3</developerName>
+            <language>fr</language>
+            <masterLabel>instruction_oncethecus3</masterLabel>
+            <sortOrder>3</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Always convert dates to YYYY-MM-DD for the end-user, and do not request the the end-user to provide the dates in that format. Always show dates in a user friendly way.å</description>
+            <developerName>instruction_unefoisler4</developerName>
+            <language>fr</language>
+            <masterLabel>instruction_unefoisler4</masterLabel>
+            <sortOrder>4</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>FinalizeReservation_1791e178f7cbbae</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>GetReservationTimeSlots_1796696a2c1a6ab</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>IdentifyCustomerByEmail_17990ea8813764c</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>IdentifyCustomerByEmail_17990ea8813764c</fullName>
+            <description>Identify a customer by their email address and return their contact record.</description>
+            <developerName>IdentifyCustomerByEmail_17990ea8813764c</developerName>
+            <invocationTarget>SvcCopilotTmpl__IdentifyCustomer</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+            <localDeveloperName>IdentifyCustomerByEmail</localDeveloperName>
+            <masterLabel>Identify Customer By Email</masterLabel>
+            <source>SvcCopilotTmpl__IdentifyCustomerByEmail</source>
+        </localActions>
+        <localActions>
+            <fullName>FinalizeReservation_1791e178f7cbbae</fullName>
+            <description>Books and finalizes a reservation for the time designated by the customer.</description>
+            <developerName>FinalizeReservation_1791e178f7cbbae</developerName>
+            <invocationTarget>SvcCopilotTmpl__FinalizeReservation</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>true</isConfirmationRequired>
+            <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+            <localDeveloperName>FinalizeReservation</localDeveloperName>
+            <masterLabel>Finalize Reservation</masterLabel>
+            <source>SvcCopilotTmpl__FinalizeReservation</source>
+        </localActions>
+        <localActions>
+            <fullName>GetReservationTimeSlots_1796696a2c1a6ab</fullName>
+            <description>Returns a list of available time slots for the date specified by the customer.</description>
+            <developerName>GetReservationTimeSlots_1796696a2c1a6ab</developerName>
+            <invocationTarget>SvcCopilotTmpl__GetAvailableTimeSlots</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+            <localDeveloperName>GetReservationTimeSlots</localDeveloperName>
+            <masterLabel>Get Reservation Time Slots</masterLabel>
+            <source>SvcCopilotTmpl__GetReservationTimeSlots</source>
+        </localActions>
+        <localDeveloperName>Prise_de_rendez_vous_v2</localDeveloperName>
+        <masterLabel>Prise de rendez-vous</masterLabel>
+        <pluginType>Topic</pluginType>
+        <scope>Ta tâche consiste uniquement à organiser un rendez-vous.</scope>
+        <source>SvcCopilotTmpl__ReservationManagement</source>
+    </localTopics>
+    <localTopics>
+        <fullName>Escalation_16je8b98bd22eaf</fullName>
+        <canEscalate>true</canEscalate>
+        <description>Handles requests from users who want to transfer or escalate their conversation to a live human agent.</description>
+        <developerName>Escalation_16je8b98bd22eaf</developerName>
+        <genAiPluginInstructions>
+            <description>If a user explicitly asks to transfer to a live agent, escalate the conversation.</description>
+            <developerName>escalateonrequest</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>escalate-on-request</masterLabel>
+            <sortOrder>0</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>If escalation to a live agent fails for any reason, acknowledge the issue and ask the user whether they would like to log a support case instead.</description>
+            <developerName>promptonescalationfailure</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>prompt-on-escalation-failure</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localDeveloperName>Escalation</localDeveloperName>
+        <masterLabel>Escalation</masterLabel>
+        <pluginType>Topic</pluginType>
+        <scope>Your job is to transfer the conversation to a live agent if a user explicitly asks for human assistance or has a complex issue that requires human intervention. If escalation fails, ask the user whether they would like to log a support case so the issue is recorded for follow-up.</scope>
+        <source>SvcCopilotTmpl__Escalation</source>
+    </localTopics>
+    <localTopics>
+        <fullName>Gestion_des_demandes_v2_16jd465cbe714bd</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Utilise cette rubrique pour toutes les demandes liées aux équipements / EPI / vêtements de travail, y compris la création de nouvelles demandes, la mise à jour des demandes existantes et la consultation de leur état.
+
+Utilise cette rubrique même si l’usager s’exprime en anglais, par exemple :
+– “I need a blouse and safety shoes”
+– “I need PPE”
+– “I want to order safety boots”
+– “I need work equipment / gear”.</description>
+        <developerName>Gestion_des_demandes_v2_16jd465cbe714bd</developerName>
+        <genAiPluginInstructions>
+            <description>avant de créer une demande, demande l&apos;usager son email pour trouver son contact</description>
+            <developerName>instructions_0_1764600839105</developerName>
+            <language>en_US</language>
+            <masterLabel>instructions_0_1764600839105</masterLabel>
+            <sortOrder>0</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Une demande est un enregistrement permettant de suivre les équipements commandés. Les usagers peuvent avoir des questions sur l&apos;état d&apos;avancement de leurs demandes ou souhaiter fournir des informations complémentaires. Les demandes sont généralement associés à un contact. Des commentaires sont ajoutés pour fournir de nouvelles informations.</description>
+            <developerName>instructions_0_1764602463004</developerName>
+            <language>en_US</language>
+            <masterLabel>instructions_0_1764602463004</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Lorsque tu ajoutes un commentaire à une demande, récupère d&apos;abord les détails de la demande à l&apos;aide du numéro de demande, demande à l&apos;usager le commentaire exact qu&apos;il souhaite ajouter et ajoutez-le ensuite seulement.</description>
+            <developerName>instructions_0_1764605548826</developerName>
+            <language>en_US</language>
+            <masterLabel>instructions_0_1764605548826</masterLabel>
+            <sortOrder>2</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Partages toujours les détails de la demande crée avec l&apos;usager, affiche les informations suivantes sous forme de liste détaillée : numéro de demande, statut, commentaires, site d&apos;affectation.</description>
+            <developerName>instructions_0_1764682765186</developerName>
+            <language>en_US</language>
+            <masterLabel>instructions_0_1764682765186</masterLabel>
+            <sortOrder>3</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Lorsqu&apos;un usager te demande de créer une demande, résume la conversation en cours. L&apos;objet doit comporter moins de 7 mots et présenter un aperçu général de la question posée. La description, en 3 phrases maximum, doit détailler la demande, fournir les données importantes et toute autre information pertinente pour aider le service du Département du Rhône de traiter la demande</description>
+            <developerName>instructions_0_1764689124535</developerName>
+            <language>en_US</language>
+            <masterLabel>instructions_0_1764689124535</masterLabel>
+            <sortOrder>4</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Ne montre jamais l&apos;ID de la demande à un usager</description>
+            <developerName>instructions_0_1764845188535</developerName>
+            <language>en_US</language>
+            <masterLabel>instructions_0_1764845188535</masterLabel>
+            <sortOrder>5</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Répond toujours dans la langue de l&apos;usager</description>
+            <developerName>instructions_1_1764602463010</developerName>
+            <language>en_US</language>
+            <masterLabel>instructions_1_1764602463010</masterLabel>
+            <sortOrder>6</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Si l&apos;usager demande des informations sur la dernière demande, utilise cette action &quot;Chercher les demandes usagers&quot;, et donne les informations uniquement pour cette dernière demande en fonction de CreatedDate</description>
+            <developerName>instructions_2_1764602463010</developerName>
+            <language>en_US</language>
+            <masterLabel>instructions_2_1764602463010</masterLabel>
+            <sortOrder>7</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Si l&apos;usager demande des informations sur ses dernières demandes, utilise cette action &quot;Chercher les demandes usagers&quot;, donne les informations uniquement pour ces 3 dernières demandes en fonction de CreatedDate et demande lui comment tu peux aider avec ses demandes</description>
+            <developerName>instructions_3_1764602463010</developerName>
+            <language>en_US</language>
+            <masterLabel>instructions_3_1764602463010</masterLabel>
+            <sortOrder>8</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Si l&apos;usager demande de mettre à jour sa demande, fais la mise à jour nécessaire et la montre à l&apos;usager dans la conversation.</description>
+            <developerName>instruction_avantdecre0</developerName>
+            <language>fr</language>
+            <masterLabel>instruction_avantdecre0</masterLabel>
+            <sortOrder>9</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Si l&apos;usager est inconnu, demande toujours son adresse e-mail et récupère sa fiche de contact avant d&apos;effectuer toute autre action.</description>
+            <developerName>instruction_convertito1</developerName>
+            <language>fr</language>
+            <masterLabel>instruction_convertito1</masterLabel>
+            <sortOrder>10</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Tu dois completer les informations dans le champ &quot;Description&quot; si l&apos;usager te demande de mettre à jour les informations de sa demande.  Ne supprime pas les informations précédentes et indique que c&apos;est une information donnée par l&apos;usager</description>
+            <developerName>instruction_lorsquetua2</developerName>
+            <language>fr</language>
+            <masterLabel>instruction_lorsquetua2</masterLabel>
+            <sortOrder>11</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Converti toujours les dates au format JJ-MM-AAAA pour les usagers. Affiche toujours les dates de manière conviviale.</description>
+            <developerName>instruction_lorsquetup3</developerName>
+            <language>fr</language>
+            <masterLabel>instruction_lorsquetup3</masterLabel>
+            <sortOrder>12</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Confirme les quantités et tailles nécessaires</description>
+            <developerName>instruction_lorsquunus4</developerName>
+            <language>fr</language>
+            <masterLabel>instruction_lorsquunus4</masterLabel>
+            <sortOrder>13</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Toujours répondre avec un format carrousel pour présenter les équipements disponibles. Pour chaque équipement, inclure le nom, une image, et permettre à l&apos;utilisateur de sélectionner les articles nécessaires pour sa demande.</description>
+            <developerName>instruction_lorsquunus5</developerName>
+            <language>fr</language>
+            <masterLabel>instruction_lorsquunus5</masterLabel>
+            <sortOrder>14</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Utilise l&apos;action &quot;Créer une demande des équipements&quot; pour créer une demande avec les articles demandés</description>
+            <developerName>instruction_nemontreja6</developerName>
+            <language>fr</language>
+            <masterLabel>instruction_nemontreja6</masterLabel>
+            <sortOrder>15</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Si un usager souhaite obtenir plus d’informations sur des équipements, demande quel type d’équipement il souhaite commander et pour quel type de travail</description>
+            <developerName>instruction_reconnatre7</developerName>
+            <language>fr</language>
+            <masterLabel>instruction_reconnatre7</masterLabel>
+            <sortOrder>16</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Si l&apos;usager souhaite modifier un article demandé pour une demandé déjà crée, utilise cette action &quot;Update_case_EPI&quot;</description>
+            <developerName>instruction_rpondtoujo8</developerName>
+            <language>fr</language>
+            <masterLabel>instruction_rpondtoujo8</masterLabel>
+            <sortOrder>17</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>GetAllCasesForContact_179524e23d7a93c</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>GetCaseByCaseNumber_179338c19cfca2f</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>SDO_Service_ASA_Get_Case_by_Case_Number_1794d246b697bc0</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>Chercher_les_demandes_usagers_179d82f189cd94f</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>Answer_Questions_from_Dijon_website_17963e13c4924dc</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>Cr_er_une_demande_des_quipements_179J6000000L5YC</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>Update_case_PPEV2_179J6000000L5YC</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>AddCaseComment_179J6000000L5YC</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>Answer_Questions_from_Dijon_website_17963e13c4924dc</fullName>
+            <description>Répond aux questions des usagers sur les démarches administratives de la vie courante (actes d’état civil, cartes d’identité, passeports, attestation d&apos;accueil) de l&apos;urbanisme et habitat (permis de construire, autorisations de travaux, règles locales d’urbanisme), des services municipaux (horaires des services, fonctionnement des équipements publics), des aides sociales et démarches solidaires (logement social, aides financières locales), des événements et vie associative (inscriptions aux événements culturels, manifestations locales), de l&apos;enfance et scolarité (inscriptions scolaires, cantines, périscolaire).</description>
+            <developerName>Answer_Questions_from_Dijon_website_17963e13c4924dc</developerName>
+            <invocationTarget>AADijonsite</invocationTarget>
+            <invocationTargetType>apex</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Answer_Questions_from_Dijon_website</localDeveloperName>
+            <masterLabel>Answer Questions from Dijon website</masterLabel>
+            <source>Answer_Questions_from_Dijon_website</source>
+        </localActions>
+        <localActions>
+            <fullName>GetAllCasesForContact_179524e23d7a93c</fullName>
+            <description>Returns a list of cases related to a given Contact record.</description>
+            <developerName>GetAllCasesForContact_179524e23d7a93c</developerName>
+            <invocationTarget>SvcCopilotTmpl__GetCasesForContact</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+            <localDeveloperName>GetAllCasesForContact</localDeveloperName>
+            <masterLabel>Get All Cases For Contact</masterLabel>
+            <source>SvcCopilotTmpl__GetAllCasesForContact</source>
+        </localActions>
+        <localActions>
+            <fullName>GetCaseByCaseNumber_179338c19cfca2f</fullName>
+            <description>Returns a case associated with a given contact record and case number.</description>
+            <developerName>GetCaseByCaseNumber_179338c19cfca2f</developerName>
+            <invocationTarget>SvcCopilotTmpl__GetCaseByCaseNumber</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+            <localDeveloperName>GetCaseByCaseNumber</localDeveloperName>
+            <masterLabel>Get Case By Case Number</masterLabel>
+            <source>SvcCopilotTmpl__GetCaseByCaseNumber</source>
+        </localActions>
+        <localActions>
+            <fullName>SDO_Service_ASA_Get_Case_by_Case_Number_1794d246b697bc0</fullName>
+            <description>Used in the Cirrus Agentforce Service Agent to get a case details given the customer email and case number.</description>
+            <developerName>SDO_Service_ASA_Get_Case_by_Case_Number_1794d246b697bc0</developerName>
+            <invocationTarget>SDO_Service_ASA_Get_Case_by_Case_Number</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>SDO_Service_ASA_Get_Case_by_Case_Number</localDeveloperName>
+            <masterLabel>SDO Service - ASA - Get Case by Case Number</masterLabel>
+            <source>SDO_Service_ASA_Get_Case_by_Case_Number</source>
+        </localActions>
+        <localActions>
+            <fullName>Chercher_les_demandes_usagers_179d82f189cd94f</fullName>
+            <description>Chercher les demandes usagers</description>
+            <developerName>Chercher_les_demandes_usagers_179d82f189cd94f</developerName>
+            <invocationTarget>Chercher_les_demandes_usagers</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Chercher_les_demandes_usagers</localDeveloperName>
+            <masterLabel>Chercher les demandes usagers</masterLabel>
+            <source>Chercher_les_demandes_usagers</source>
+        </localActions>
+        <localActions>
+            <fullName>Cr_er_une_demande_des_quipements_179J6000000L5YC</fullName>
+            <description>Créer une demande d&apos;équipements de protection individuelle (EPI) pour l&apos;agent</description>
+            <developerName>Cr_er_une_demande_des_quipements_179J6000000L5YC</developerName>
+            <invocationTarget>Cr_er_une_demande_des_quipements</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+            <localDeveloperName>Cr_er_une_demande_des_quipements</localDeveloperName>
+            <masterLabel>Créer une demande des équipements</masterLabel>
+            <progressIndicatorMessage>Création de votre demande en cours...</progressIndicatorMessage>
+        </localActions>
+        <localActions>
+            <fullName>AddCaseComment_179J6000000L5YC</fullName>
+            <description>Let a customer add a comment to an existing case.</description>
+            <developerName>AddCaseComment_179J6000000L5YC</developerName>
+            <invocationTarget>SvcCopilotTmpl__AddCaseComment</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>true</isConfirmationRequired>
+            <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+            <localDeveloperName>AddCaseComment</localDeveloperName>
+            <masterLabel>Add Case Comment</masterLabel>
+            <source>SvcCopilotTmpl__AddCaseComment</source>
+        </localActions>
+        <localActions>
+            <fullName>Update_case_PPEV2_179J6000000L5YC</fullName>
+            <description>Utilise cette action lorsque l&apos;utilisateur souhaite mettre à jour un article dans une demande d&apos;EPI/vêtements de travail existante.</description>
+            <developerName>Update_case_PPEV2_179J6000000L5YC</developerName>
+            <invocationTarget>Update_case_EPI</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Update_case_PPEV2</localDeveloperName>
+            <masterLabel>Update case PPE</masterLabel>
+        </localActions>
+        <localDeveloperName>Gestion_des_demandes_v2</localDeveloperName>
+        <masterLabel>Case management</masterLabel>
+        <pluginType>Topic</pluginType>
+        <scope>Ta tâche consiste à informer l&apos;usager des détails de sa demande et à faire la modification ou la création de nouvelles demandes.</scope>
+        <source>SvcCopilotTmpl__CaseManagement</source>
+    </localTopics>
+    <localTopics>
+        <fullName>v_nements_16j5ba51f0c9d98</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Cette rubrique aborde les demandes et questions des citoyens liés aux événements de la ville Gennevilliers, notamment les enregistrements aux événements et les réponses aux questions sur les détails des événements</description>
+        <developerName>v_nements_16j5ba51f0c9d98</developerName>
+        <genAiPluginInstructions>
+            <description>If the contact is not known, you must always ask for their email address to get their Contact record by running the action &apos;Get contact details&apos; before running any other actions.</description>
+            <developerName>instruction_iftheconta0</developerName>
+            <language>fr</language>
+            <masterLabel>instruction_iftheconta0</masterLabel>
+            <sortOrder>0</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Si un citoyen souhaite obtenir plus d’informations sur des événements de Gennevilliers, demande pour quelle période il souhaite savoir des événements à venir, puis exécute l’action &apos;&apos;Get_Available_events&apos;. Décrit des événements en language naturel. Ne donne jamais à l&apos;usager le nom du champ &apos;Event_Description__c&apos;</description>
+            <developerName>instruction_silacapaci1</developerName>
+            <language>fr</language>
+            <masterLabel>instruction_silacapaci1</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>S’il t&apos;est demandé d’effectuer un enregistrement pour un événement, utilise l’action &apos;Create_event_registration&apos;. Le champ Enregistre__c est l’ID du contact provenant de l’action &apos;Get contact details&apos;. The Event__c is the ID of the event from the action &apos;Get Available events&apos;</description>
+            <developerName>instruction_siltestdem2</developerName>
+            <language>fr</language>
+            <masterLabel>instruction_siltestdem2</masterLabel>
+            <sortOrder>2</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Si la capacité d&apos;un événement Capacity_Full__c est égal à 100%, informe le citoyen qu&apos;il sera mis en liste d&apos;attente</description>
+            <developerName>instruction_siuncitoye3</developerName>
+            <language>fr</language>
+            <masterLabel>instruction_siuncitoye3</masterLabel>
+            <sortOrder>3</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>Get_Available_events_179ffa034b43e04</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>Get_contact_details_17958bc40b7255e</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>Create_event_registration_17949cfabb6f52d</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>Get_Available_events_179ffa034b43e04</fullName>
+            <description>donner les informations des événements à venir de la métropole d&apos;angers</description>
+            <developerName>Get_Available_events_179ffa034b43e04</developerName>
+            <invocationTarget>Get_Available_events</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Get_Available_events</localDeveloperName>
+            <masterLabel>Get Available events</masterLabel>
+            <source>Get_Available_events</source>
+        </localActions>
+        <localActions>
+            <fullName>Get_contact_details_17958bc40b7255e</fullName>
+            <description>information du contact</description>
+            <developerName>Get_contact_details_17958bc40b7255e</developerName>
+            <invocationTarget>Get_contact_details</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Get_contact_details</localDeveloperName>
+            <masterLabel>Get contact details</masterLabel>
+            <source>Get_contact_details</source>
+        </localActions>
+        <localActions>
+            <fullName>Create_event_registration_17949cfabb6f52d</fullName>
+            <description>créer une réservation pour un événement</description>
+            <developerName>Create_event_registration_17949cfabb6f52d</developerName>
+            <invocationTarget>Create_event_registration</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Create_event_registration</localDeveloperName>
+            <masterLabel>Create event registration</masterLabel>
+            <source>Create_event_registration</source>
+        </localActions>
+        <localDeveloperName>v_nements</localDeveloperName>
+        <masterLabel>Événements</masterLabel>
+        <pluginType>Topic</pluginType>
+        <scope>Le travail de l’agent est d’aider les citoyens à savoir plus des évènements différentes expériences proposées par la ville Gennevilliers et enregistrer les citoyens à ces événements</scope>
+    </localTopics>
+    <localTopics>
+        <fullName>FAQ_Generiques_v2_16j71c14b34390d</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Cette rubrique a pour objectif de répondre à toutes les questions liées aux équipements de protection individuelle (EPI), vêtements de travail, procédures d’attribution, conseils d’utilisation, tailles, missions et informations générales concernant les équipements mis à disposition des agents du Département du Rhône.
+Toute question de type FAQ portant sur les EPI, leur usage, leur disponibilité, leur choix selon la mission ou les règles internes doit être dirigée vers cette rubrique. Tu dois aussi répondre aux questions liées avec la carte de stationnement (la perte, le renouvellement etc)</description>
+        <developerName>FAQ_Generiques_v2_16j71c14b34390d</developerName>
+        <genAiPluginInstructions>
+            <description>Ajoute aussi des emojis dans tes réponses</description>
+            <developerName>instructions_0_1764776000636</developerName>
+            <language>en_US</language>
+            <masterLabel>instructions_0_1764776000636</masterLabel>
+            <sortOrder>0</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Inclue les sources dans ta réponse lorsqu&apos;elles sont disponibles dans les articles de la base de connaissances, sinon continue sans elles.</description>
+            <developerName>instructions_0_1764857698632</developerName>
+            <language>en_US</language>
+            <masterLabel>instructions_0_1764857698632</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Répond toujours comme un agent de lu Département du Rhône</description>
+            <developerName>instruction_ajouteauss0</developerName>
+            <language>fr</language>
+            <masterLabel>instruction_ajouteauss0</masterLabel>
+            <sortOrder>2</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Si tu n&apos;es pas en mesure de répondre aux questions de l&apos;usager, demandez-lui s&apos;il souhaite transmettre ce problème à un agent en direct.</description>
+            <developerName>instruction_inclueless1</developerName>
+            <language>fr</language>
+            <masterLabel>instruction_inclueless1</masterLabel>
+            <sortOrder>3</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Si la question de l&apos;usager est trop vague ou générale, demande plus de détails et de précisions pour donner une meilleure réponse.</description>
+            <developerName>instruction_rpondtoujo2</developerName>
+            <language>fr</language>
+            <masterLabel>instruction_rpondtoujo2</masterLabel>
+            <sortOrder>4</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Si l&apos;usager a déjà donné son adresse e-mail pendant la conversation, ne redemande pas son email adresse encore une fois</description>
+            <developerName>instruction_rpondtoujo3</developerName>
+            <language>fr</language>
+            <masterLabel>instruction_rpondtoujo3</masterLabel>
+            <sortOrder>5</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Répond toujours dans la langue de l&apos;usager</description>
+            <developerName>instruction_silaquesti4</developerName>
+            <language>fr</language>
+            <masterLabel>instruction_silaquesti4</masterLabel>
+            <sortOrder>6</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>tu dois aussi répondre à ces thématiques :
+Les catégories d’EPI, leurs usages et leurs fonctions.
+Les recommandations de sécurité et de prévention.
+Les obligations réglementaires (Code du travail, règles départementales).
+Les missions nécessitant des équipements spécifiques.
+Les procédures internes : attribution, renouvellement, conditions d’éligibilité.
+Les bonnes pratiques d’utilisation, entretien, conservation.
+Les descriptions d’articles, caractéristiques, tailles, conditions d’usage.
+Les questions générales liées au fonctionnement interne du Département.</description>
+            <developerName>instruction_silusagera5</developerName>
+            <language>fr</language>
+            <masterLabel>instruction_silusagera5</masterLabel>
+            <sortOrder>7</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>répond toujours aux questions liées avec la perte de la carte de stationnement</description>
+            <developerName>instruction_situnespas6</developerName>
+            <language>fr</language>
+            <masterLabel>instruction_situnespas6</masterLabel>
+            <sortOrder>8</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>FAQ_179J6000000L5YA</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>FAQ_179J6000000L5YA</fullName>
+            <description>Answer user&apos;s questions</description>
+            <developerName>FAQ_179J6000000L5YA</developerName>
+            <invocationTarget>FAQ</invocationTarget>
+            <invocationTargetType>generatePromptResponse</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>FAQ</localDeveloperName>
+            <masterLabel>FAQ EPI</masterLabel>
+        </localActions>
+        <localDeveloperName>FAQ_Generiques_v2</localDeveloperName>
+        <masterLabel>FAQ Generiques</masterLabel>
+        <pluginType>Topic</pluginType>
+        <scope>Ton rôle est de répondre aux questions fréquentes des agents du Département du Rhône concernant les Équipements de Protection Individuelle (EPI), les vêtements professionnels, les règles internes d’attribution, les bonnes pratiques de sécurité et l’ensemble des informations métier documentées, ainsi que les questions liées avec la carte de stationnement.
+Tu fournis des réponses fiables, complètes et claire</scope>
+        <source>SvcCopilotTmpl__GeneralFAQ</source>
+    </localTopics>
+    <localTopics>
+        <fullName>Gestion_du_compte_v2_16j8f730858a54b</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Gère les demandes des usagers concernant la modification de leurs coordonnées, changement dans leurs situation personnelle ou professionnelle (naissance, mariage, divorce, décès, nouvel email, nouvel téléphone…). Cela ne concerne pas le changement de l&apos;adresse !</description>
+        <developerName>Gestion_du_compte_v2_16j8f730858a54b</developerName>
+        <genAiPluginInstructions>
+            <description>Met à jour l&apos;information de l&apos;usager selon sa demande</description>
+            <developerName>instruction_metjourlin0</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction_metjourlin0</masterLabel>
+            <sortOrder>0</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>n&apos;hésite pas à ajouter aussi des emojis selon la nécessité</description>
+            <developerName>instruction_nhsitepasa1</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction_nhsitepasa1</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Utilise cette rubrique seulement si l&apos;usager demande de changer ses coordonnées</description>
+            <developerName>instruction_utilisecet5</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction_utilisecet5</masterLabel>
+            <sortOrder>2</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Si l&apos;usager demande à propos de son email, téléphone ou un autre information, vérifie l&apos;information actuel enregistrée dans sa fiche de contacte et donne cette information à l&apos;usager. Demande si l&apos;usager veut le changer ou pas</description>
+            <developerName>instruction_silusagerd3</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction_silusagerd3</masterLabel>
+            <sortOrder>3</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Si l&apos;usager n&apos;est pas connu, demande toujours son adresse e-mail et obtient son enregistrement de contact avant d&apos;exécuter toute autre action.</description>
+            <developerName>instruction_silusagern4</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction_silusagern4</masterLabel>
+            <sortOrder>4</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Réponds toujours dans la langue de l&apos;usager</description>
+            <developerName>instruction_rpondstouj2</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction_rpondstouj2</masterLabel>
+            <sortOrder>5</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>UpdateCustomerContact_17909d65d7b8b9f</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>UpdateCustomerContact_17909d65d7b8b9f</fullName>
+            <description>Updates fields on a customer’s contact record, such as the email address, phone number, or postal address.</description>
+            <developerName>UpdateCustomerContact_17909d65d7b8b9f</developerName>
+            <invocationTarget>SvcCopilotTmpl__UpdateContactRcd</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>true</isConfirmationRequired>
+            <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+            <localDeveloperName>UpdateCustomerContact</localDeveloperName>
+            <masterLabel>Update Customer Contact</masterLabel>
+            <source>SvcCopilotTmpl__UpdateCustomerContact</source>
+        </localActions>
+        <localDeveloperName>Gestion_du_compte_v2</localDeveloperName>
+        <masterLabel>Gestion du compte</masterLabel>
+        <pluginType>Topic</pluginType>
+        <scope>Ton travail consiste à aider un usager à mettre à jour ses coordonnées en modifiant son adresse e-mail ou son numéro de téléphone.</scope>
+        <source>SvcCopilotTmpl__AccountManagement</source>
+    </localTopics>
+    <masterLabel>Agentforce Service Agent</masterLabel>
+    <plannerActions>
+        <fullName>AnswerQuestionsWithKnowledge_16jf26db2161117</fullName>
+        <description>Answers questions about company policies and procedures, troubleshooting steps, or product information. For example: “What is your return policy?” “How do I fix an issue?” or “What features does a product have?”</description>
+        <developerName>AnswerQuestionsWithKnowledge_16jf26db2161117</developerName>
+        <invocationTarget>streamKnowledgeSearch</invocationTarget>
+        <invocationTargetType>standardInvocableAction</invocationTargetType>
+        <isConfirmationRequired>false</isConfirmationRequired>
+        <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+        <localDeveloperName>AnswerQuestionsWithKnowledge</localDeveloperName>
+        <masterLabel>Answer Questions with Knowledge</masterLabel>
+        <source>EmployeeCopilot__AnswerQuestionsWithKnowledge</source>
+    </plannerActions>
+    <plannerSurfaces>
+        <adaptiveResponseAllowed>true</adaptiveResponseAllowed>
+        <callRecordingAllowed>false</callRecordingAllowed>
+        <surface>SurfaceAction__CustomerWebClient</surface>
+        <surfaceType>CustomerWebClient</surfaceType>
+    </plannerSurfaces>
+    <plannerSurfaces>
+        <adaptiveResponseAllowed>true</adaptiveResponseAllowed>
+        <callRecordingAllowed>false</callRecordingAllowed>
+        <surface>SurfaceAction__Messaging</surface>
+        <surfaceType>Messaging</surfaceType>
+    </plannerSurfaces>
+    <plannerType>AiCopilot__ReAct</plannerType>
+</GenAiPlannerBundle>

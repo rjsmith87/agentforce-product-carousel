@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>accompagner les usagers sur le processus des demandes d&apos;act d&apos;état civil</description>
+    <developerName>Etat_civil</developerName>
+    <invocationTarget>Etat_civil</invocationTarget>
+    <invocationTargetType>generatePromptResponse</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+    <masterLabel>Etat civil</masterLabel>
+</GenAiFunction>

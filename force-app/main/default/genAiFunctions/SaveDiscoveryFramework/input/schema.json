@@ -1,0 +1,35 @@
+{
+  "required" : [ "dataJSON", "osLanguage", "osSubType", "osType" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "dataJSON" : {
+      "title" : "dataJSON",
+      "description" : "Formatted JSON of Assessment",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "osLanguage" : {
+      "title" : "osLanguage",
+      "description" : "Language of Omniscript",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "osSubType" : {
+      "title" : "osSubType",
+      "description" : "SubType of Omniscript",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "osType" : {
+      "title" : "osType",
+      "description" : "Type of Omniscript",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

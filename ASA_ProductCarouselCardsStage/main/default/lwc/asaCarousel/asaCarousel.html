@@ -1,0 +1,99 @@
+<template>
+    <!-- Error State -->
+    <template if:true={errorMessage}>
+        <div class="error-container">
+            <p class="error-message">{errorMessage}</p>
+        </div>
+    </template>
+    
+    <!-- Carousel Display -->
+    <template if:true={hasProducts}>
+        <div class="carousel-container">
+            <div class="carousel-card">
+                <!-- Product Image with Stage Badge Overlay -->
+                <template if:true={currentProduct.imageUrl}>
+                    <div class="card-image-container">
+                        <img 
+                            src={currentProduct.imageUrl} 
+                            alt={currentProduct.title}
+                            class="card-image"
+                        />
+                        <!-- Stage Badge Overlay (White Text) -->
+                        <template if:true={currentProduct.stage}>
+                            <div class="stage-badge">
+                                <span class="stage-text">{currentProduct.stage}</span>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+                
+                <!-- Product Content -->
+                <div class="card-content">
+                    <!-- Title -->
+                    <h2 class="card-title">{currentProduct.title}</h2>
+                    
+                    <!-- Description -->
+                    <template if:true={currentProduct.description}>
+                        <p class="card-description">{currentProduct.description}</p>
+                    </template>
+                    
+                    <!-- Time Badge (Sun/Moon Symbols) -->
+                    <template if:true={currentProduct.time}>
+                        <div class="time-badge-container">
+                            <span class="time-badge">{currentProduct.time}</span>
+                        </div>
+                    </template>
+                </div>
+            </div>
+            
+            <!-- Navigation (only show if multiple products) - OUTSIDE card -->
+            <template if:true={showNavigation}>
+                <div class="carousel-controls">
+                    <!-- Previous Button -->
+                    <button 
+                        class="nav"
+                        onclick={handlePrevious}
+                        disabled={isFirstCard}
+                        aria-label="Previous"
+                    >
+                        <svg class="arrow-icon" viewBox="0 0 11 18" xmlns="http://www.w3.org/2000/svg">
+                            <polyline points="10.5,0 0,9 10.5,18" />
+                        </svg>
+                    </button>
+                    
+                    <!-- Dot Indicators -->
+                    <template for:each={productsWithIndex} for:item="item">
+                        <div class="dotBody" key={item.key}>
+                            <span 
+                                class={item.dotClass}
+                                data-index={item.index}
+                                onclick={handleDotClick}
+                            ></span>
+                        </div>
+                    </template>
+                    
+                    <!-- Next Button -->
+                    <button 
+                        class="nav"
+                        onclick={handleNext}
+                        disabled={isLastCard}
+                        aria-label="Next"
+                    >
+                        <svg class="arrow-icon" viewBox="0 0 11 18" xmlns="http://www.w3.org/2000/svg">
+                            <polyline points="0,0 10.5,9 0,18" />
+                        </svg>
+                    </button>
+                </div>
+            </template>
+        </div>
+    </template>
+    
+    <!-- Empty State -->
+    <template if:false={hasProducts}>
+        <template if:false={errorMessage}>
+            <div class="empty-state">
+                <p>No products to display</p>
+            </div>
+        </template>
+    </template>
+</template>

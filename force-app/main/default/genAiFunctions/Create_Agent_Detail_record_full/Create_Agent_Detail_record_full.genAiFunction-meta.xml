@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Create Agent Detail record after user provided: 
+
+Business Information:
+1. Company name 
+2. Company&apos;s website
+ 3. Companies Industry
+
+Business Requirements:
+ 1. What job should the agent do 
+2. What Are the requirements
+
+Return the Record in the chat, so that you can click on the record to open the rcord page</description>
+    <developerName>Create_Agent_Detail_record_full</developerName>
+    <invocationTarget>AgentCreate_Agent</invocationTarget>
+    <invocationTargetType>apex</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+    <masterLabel>Create Agent Detail record full</masterLabel>
+</GenAiFunction>

@@ -1,0 +1,72 @@
+<template>
+    <div class="confirmation-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-icon">
+                <lightning-icon icon-name="action:approval" size="large"></lightning-icon>
+            </div>
+            <h1>Commande Confirmée</h1>
+            <p class="subtitle" if:true={orderData.caseNumber}>
+                Numéro de demande: <strong>{orderData.caseNumber}</strong>
+            </p>
+        </div>
+
+        <!-- Loading -->
+        <template if:true={isLoading}>
+            <div class="loading-container">
+                <lightning-spinner alternative-text="Chargement..." size="medium"></lightning-spinner>
+            </div>
+        </template>
+
+        <!-- Error -->
+        <template if:true={error}>
+            <div class="error-container">
+                <lightning-icon icon-name="utility:error" variant="error"></lightning-icon>
+                <p>Impossible de charger les détails de la commande.</p>
+            </div>
+        </template>
+
+        <!-- Content -->
+        <template if:true={hasData}>
+            <!-- Order Info -->
+            <div class="order-info">
+                <div class="info-item">
+                    <span class="label">Statut:</span>
+                    <lightning-badge label={orderData.status}></lightning-badge>
+                </div>
+                <div class="info-item" if:true={orderData.contactName}>
+                    <span class="label">Client:</span>
+                    <span class="value">{orderData.contactName}</span>
+                </div>
+                <div class="info-item" if:true={formattedDate}>
+                    <span class="label">Date:</span>
+                    <span class="value">{formattedDate}</span>
+                </div>
+            </div>
+
+            <!-- Items Grid -->
+            <h2>Articles commandés</h2>
+            <div class="items-grid">
+                <template for:each={orderData.items} for:item="item">
+                    <div key={item.id} class="item-card">
+                        <div class="item-image">
+                            <img src={item.imageUrl} alt={item.name} onerror={handleImageError}/>
+                        </div>
+                        <div class="item-details">
+                            <h3>{item.name}</h3>
+                            <p class="item-specs">
+                                <span if:true={item.size}>Taille: {item.size}</span>
+                                <span if:true={item.quantity}> • Quantité: {item.quantity}</span>
+                            </p>
+                        </div>
+                    </div>
+                </template>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+                <p>Votre demande sera traitée dans les plus brefs délais.</p>
+            </div>
+        </template>
+    </div>
+</template>

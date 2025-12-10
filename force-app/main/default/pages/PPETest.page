@@ -1,0 +1,77 @@
+<apex:page controller="PPEOrderConfirmationController" showHeader="false" sidebar="false" standardStylesheets="false" docType="html-5.0" action="{!loadOrder}">
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Confirmation Commande PPE</title>
+    <apex:slds />
+    <style>
+        body { font-family: 'Salesforce Sans', Arial, sans-serif; background: #f4f6f9; margin: 0; padding: 2rem; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { text-align: center; margin-bottom: 2rem; }
+        .header h1 { color: #16325c; }
+        .info-box { background: white; border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .items-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; }
+        .item-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .item-card img { width: 100%; height: 180px; object-fit: cover; }
+        .item-details { padding: 1rem; }
+        .item-details h3 { margin: 0 0 0.5rem 0; color: #16325c; }
+        .item-details p { margin: 0; color: #706e6b; }
+        .test-info { background: #e8f4fd; border: 1px solid #1589ee; border-radius: 8px; padding: 1rem; margin-bottom: 2rem; }
+        .test-info code { background: white; padding: 0.25rem 0.5rem; border-radius: 4px; display: block; margin-top: 0.5rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="test-info">
+            <strong>Test Sophie:</strong>
+            <code>Je souhaite commander une blouse de travail, taille S, quantité 5</code>
+            <code>Email: rsmith2@salesforce.com</code>
+        </div>
+        
+        <div class="header">
+            <h1>✓ Commande Confirmée</h1>
+            <p>Numéro: <strong>{!caseNumber}</strong></p>
+        </div>
+        
+        <div class="info-box">
+            <p><strong>Statut:</strong> {!orderStatus}</p>
+            <p><strong>Date:</strong> {!orderDate}</p>
+        </div>
+        
+        <h2>Articles commandés</h2>
+        <div class="items-grid">
+            <apex:repeat value="{!items}" var="item">
+                <div class="item-card">
+                    <img src="{!item.imageUrl}" alt="{!item.name}"/>
+                    <div class="item-details">
+                        <h3>{!item.name}</h3>
+                        <p>Taille: {!item.size} • Quantité: {!item.quantity}</p>
+                    </div>
+                </div>
+            </apex:repeat>
+        </div>
+    </div>
+
+    <!-- Sophie Agent -->
+    <script type='text/javascript'>
+        function initEmbeddedMessaging() {
+            try {
+                embeddedservice_bootstrap.settings.language = 'fr';
+                embeddedservice_bootstrap.init(
+                    '00DJ6000000L9tj',
+                    'SDO_Messaging_for_Web',
+                    'https://kkarapysho-250422-613-demo.my.site.com/ESWSDOMessagingforWeb1745324985459',
+                    {
+                        scrt2URL: 'https://kkarapysho-250422-613-demo.my.salesforce-scrt.com'
+                    }
+                );
+            } catch (err) {
+                console.error('Error loading Embedded Messaging: ', err);
+            }
+        };
+    </script>
+    <script type='text/javascript' src='https://kkarapysho-250422-613-demo.my.site.com/ESWSDOMessagingforWeb1745324985459/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+</body>
+</html>
+</apex:page>

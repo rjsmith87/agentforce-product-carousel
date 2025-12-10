@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Summarizes all Interaction Summaries for an Account</description>
+    <developerName>gps_Interaction_Summary_Prompt</developerName>
+    <invocationTarget>gps_Interaction_Summary_Promp</invocationTarget>
+    <invocationTargetType>generatePromptResponse</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+    <masterLabel>Interaction Summary Prompt</masterLabel>
+</GenAiFunction>

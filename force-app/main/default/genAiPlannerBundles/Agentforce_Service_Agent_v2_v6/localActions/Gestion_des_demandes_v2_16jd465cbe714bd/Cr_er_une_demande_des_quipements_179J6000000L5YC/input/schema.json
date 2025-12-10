@@ -1,0 +1,35 @@
+{
+  "required" : [ "customeremail" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "articlename" : {
+      "title" : "articlename",
+      "description" : "nom des articles pour lesquels il souhaite faire sa demande",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "casedesciption" : {
+      "title" : "casedesciption",
+      "description" : "Stores the details of the user issue to be used for the case.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "customeremail" : {
+      "title" : "customeremail",
+      "description" : "Adresse e-mail du demandeur",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "itemJSON" : {
+      "title" : "itemJSON",
+      "description" : "Liste des articles en format JSON avec article, taille et quantité",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

@@ -1,0 +1,14 @@
+{
+  "required" : [ "RequiredPostalCode" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "RequiredPostalCode" : {
+      "title" : "RequiredPostalCode",
+      "description" : "Le code postal de l’usager, qui permet de trouver des crèches disponibles dans son quartier ",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

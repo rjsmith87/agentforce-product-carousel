@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>After running a Discovery Framework through Agentforce this can be used as an Action to save the results of an Assessment</description>
+    <developerName>SaveDiscoveryFramework</developerName>
+    <invocationTarget>AgentForceSaveDiscoveryFramework</invocationTarget>
+    <invocationTargetType>apex</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+    <masterLabel>SaveDiscoveryFramework</masterLabel>
+</GenAiFunction>

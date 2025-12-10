@@ -1,0 +1,55 @@
+{
+  "required" : [ "agentDescription", "companyName", "companyWebsite", "industry", "jobTitle" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "agentDescription" : {
+      "title" : "Agent Description",
+      "description" : "Agent Description/Requirements",
+      "const" : "",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "companyName" : {
+      "title" : "Company Name",
+      "description" : "The name of the company",
+      "const" : "",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "agentType" : {
+      "title" : "Agent Type",
+      "description" : "The type of agent, internal or external, if internal add: 'Internal - Employee facing', if external add:  'Customer - Consumer facing'",
+      "const" : "",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "companyWebsite" : {
+      "title" : "Company Website",
+      "description" : "The company's website",
+      "const" : "",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "industry" : {
+      "title" : "Industry",
+      "description" : "The industry of the company",
+      "const" : "",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "jobTitle" : {
+      "title" : "Job Title",
+      "description" : "What Are the requirements",
+      "const" : "",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

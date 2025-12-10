@@ -1,0 +1,28 @@
+{
+  "required" : [ "Input:Demo_Key", "Input:Question", "citationMode" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "Input:Demo_Key" : {
+      "title" : "Demo Key",
+      "description" : "This is the demo key specified by the Agent Topic Instructions",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "Input:Question" : {
+      "title" : "Question",
+      "description" : "This is the question asked by the user",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "citationMode" : {
+      "title" : "Citation Mode",
+      "description" : "Select Citation Mode",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

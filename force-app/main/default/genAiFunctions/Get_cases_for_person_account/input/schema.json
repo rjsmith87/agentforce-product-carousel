@@ -1,0 +1,17 @@
+{
+  "required" : [ "PersonAccountRecord" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "PersonAccountRecord" : {
+      "title" : "PersonAccountRecord",
+      "description" : "The person account record for a citizen used to look up related case records.",
+      "lightning:type" : "lightning__recordInfoType",
+      "lightning:sObjectInfo" : {
+        "apiName" : "Account"
+      },
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

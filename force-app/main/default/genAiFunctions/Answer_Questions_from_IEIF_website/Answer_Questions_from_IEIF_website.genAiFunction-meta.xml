@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Répond aux questions sur les adhésions, services, données et procédures de l’IEIF.
+Par exemple : « Quelle est la différence entre les formules Standard, Corporate et Premium ? », « Comment accéder aux indices de marché ? », ou « Quels avantages concrets apporte une étude sur mesure ? ».
+Fournit des explications claires, à jour et précises.</description>
+    <developerName>Answer_Questions_from_IEIF_website</developerName>
+    <invocationTarget>AAIEIF</invocationTarget>
+    <invocationTargetType>apex</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+    <masterLabel>Answer Questions from IEIF website</masterLabel>
+</GenAiFunction>

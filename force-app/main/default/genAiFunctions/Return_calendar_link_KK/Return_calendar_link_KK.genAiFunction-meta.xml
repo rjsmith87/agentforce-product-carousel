@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Adds a calendar link to the agent’s response, allowing the prospect to quickly schedule a meeting that is convenient for them.</description>
+    <developerName>Return_calendar_link_KK</developerName>
+    <invocationTarget>Return_calendar_link_KK</invocationTarget>
+    <invocationTargetType>flow</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+    <mappingAttributes>
+        <label>targetId</label>
+        <name>input_targetId</name>
+        <parameterName>targetId</parameterName>
+        <parameterType>input</parameterType>
+    </mappingAttributes>
+    <masterLabel>Return calendar link KK</masterLabel>
+    <progressIndicatorMessage>Par défault</progressIndicatorMessage>
+</GenAiFunction>

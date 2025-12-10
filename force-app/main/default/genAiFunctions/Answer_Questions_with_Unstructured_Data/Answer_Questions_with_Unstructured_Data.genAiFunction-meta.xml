@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Answers questions about a specific topic as specified by the Demo Key.</description>
+    <developerName>Answer_Questions_with_Unstructured_Data</developerName>
+    <invocationTarget>gps_Answer_Questions_with_Unstructured_Data</invocationTarget>
+    <invocationTargetType>generatePromptResponse</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+    <masterLabel>Answer Questions with Unstructured Data</masterLabel>
+    <progressIndicatorMessage>Working...</progressIndicatorMessage>
+</GenAiFunction>

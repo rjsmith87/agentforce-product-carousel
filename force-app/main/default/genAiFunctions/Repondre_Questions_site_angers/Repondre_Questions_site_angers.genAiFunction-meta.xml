@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Répond aux questions des usagers sur les démarches administratives de la vie courante (actes d’état civil, cartes d’identité, passeports, attestation d&apos;accueil) de l&apos;urbanisme et habitat (permis de construire, autorisations de travaux, règles locales d’urbanisme), des services municipaux (horaires des services, fonctionnement des équipements publics), des aides sociales et démarches solidaires (logement social, aides financières locales), des événements et vie associative (inscriptions aux événements culturels, manifestations locales), de l&apos;enfance et scolarité (inscriptions scolaires, cantines, périscolaire).</description>
+    <developerName>Repondre_Questions_site_angers</developerName>
+    <invocationTarget>AAAngers</invocationTarget>
+    <invocationTargetType>apex</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+    <masterLabel>Répondre aux questions du site Angers</masterLabel>
+</GenAiFunction>

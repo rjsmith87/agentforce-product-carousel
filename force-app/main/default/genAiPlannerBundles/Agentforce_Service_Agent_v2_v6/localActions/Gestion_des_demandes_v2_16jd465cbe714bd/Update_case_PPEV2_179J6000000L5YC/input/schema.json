@@ -1,0 +1,42 @@
+{
+  "required" : [ "var_ArticleName" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "customeremail" : {
+      "title" : "customeremail",
+      "description" : "l'adresse email de l'usager",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "recordId" : {
+      "title" : "recordId",
+      "description" : "ID de la demande que l'usager souhaite modifier",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "var_ArticleName" : {
+      "title" : "var_ArticleName",
+      "description" : "nom de l'article que l'usager veut modifier",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "var_NewQuantite" : {
+      "title" : "var_NewQuantite",
+      "description" : "nouvelle quantité de l'article",
+      "lightning:type" : "lightning__numberType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "var_NewTaille" : {
+      "title" : "var_NewTaille",
+      "description" : "nouvelle taille de l'article",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

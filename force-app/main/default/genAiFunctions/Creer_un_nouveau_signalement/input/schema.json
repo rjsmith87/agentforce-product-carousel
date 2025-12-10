@@ -1,0 +1,28 @@
+{
+  "required" : [ "casedesciption", "customeremail", "rue" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "casedesciption" : {
+      "title" : "casedesciption",
+      "description" : "Stores the details of the user issue to be used for the case.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "customeremail" : {
+      "title" : "customeremail",
+      "description" : "Stores the email of the customer",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "rue" : {
+      "title" : "rue",
+      "description" : "rue de signalement",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

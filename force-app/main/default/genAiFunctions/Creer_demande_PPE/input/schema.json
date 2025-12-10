@@ -1,0 +1,28 @@
+{
+  "required" : [ "itemJSON", "customerEmail" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "itemJSON" : {
+      "title" : "itemJSON",
+      "description" : "Required. JSON array of items with article name, size, and quantity. Example: [{\"article\":\"Blouse de travail\",\"taille\":\"M\",\"quantite\":2}]",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "customerEmail" : {
+      "title" : "customerEmail",
+      "description" : "Required. The email address of the customer to find their contact record.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : true,
+      "copilotAction:isUserInput" : true
+    },
+    "caseDescription" : {
+      "title" : "caseDescription",
+      "description" : "Optional. Description or comments for the case/demande.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

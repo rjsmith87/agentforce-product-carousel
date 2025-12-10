@@ -1,0 +1,14 @@
+{
+  "required" : [ "AgentDetailId" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "AgentDetailId" : {
+      "title" : "AgentDetailId",
+      "description" : "The recordId of the AgentDetail Record that was created in the Create Agent action before",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

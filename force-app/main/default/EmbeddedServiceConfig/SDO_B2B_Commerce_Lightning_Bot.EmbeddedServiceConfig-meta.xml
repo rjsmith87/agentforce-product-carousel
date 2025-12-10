@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmbeddedServiceConfig xmlns="http://soap.sforce.com/2006/04/metadata">
+    <areGuestUsersAllowed>false</areGuestUsersAllowed>
+    <deploymentFeature>LiveAgent</deploymentFeature>
+    <deploymentType>Web</deploymentType>
+    <isEnabled>true</isEnabled>
+    <isTermsAndConditionsEnabled>false</isTermsAndConditionsEnabled>
+    <isTermsAndConditionsRequired>false</isTermsAndConditionsRequired>
+    <masterLabel>SDO - B2B Commerce Bot</masterLabel>
+    <shouldHideAuthDialog>false</shouldHideAuthDialog>
+    <site>Do_Not_Use_SDO_B2B_Commerce</site>
+</EmbeddedServiceConfig>

@@ -1,0 +1,21 @@
+{
+  "required" : [ "Input:user_input" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "Input:user_input" : {
+      "title" : "user input",
+      "description" : "Prompt text input",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "citationMode" : {
+      "title" : "Citation Mode",
+      "description" : "Select Citation Mode",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

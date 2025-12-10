@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_Details_To_Carousel</name>
+        <label>Assign Details To Carousel</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>Carousel.productCarouselJSON</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Details</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description>You must always format your product recommendation output in this format.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>Format_Details</name>
+        <dataType>String</dataType>
+        <expression>SUBSTITUTE({!Details}, &quot;\\\&quot;&quot;, &quot;\&quot;&quot;)</expression>
+    </formulas>
+    <interviewLabel>Format Output {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Format Output</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Assign_Details_To_Carousel</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Show to the user</description>
+        <name>Carousel</name>
+        <apexClass>AsaCarouselData</apexClass>
+        <dataType>Apex</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>This is the full detail to send over and format in this way, you can have either 1 or many options: {&quot;products&quot;:[{&quot;title&quot;:&quot;productTitle1&quot;,&quot;imageUrl&quot;:&quot;imageUrl1&quot;,&quot;description&quot;:&quot;description1&quot;,&quot;time&quot;:&quot;time1&quot;,&quot;stage&quot;:&quot;stage1&quot;},{&quot;title&quot;:&quot;productTitle2&quot;,&quot;imageUrl&quot;:&quot;imageUrl2&quot;,&quot;description&quot;:&quot;description2&quot;,&quot;time&quot;:&quot;time2&quot;,&quot;stage&quot;:&quot;stage2&quot;},{&quot;title&quot;:&quot;productTitle3&quot;,&quot;imageUrl&quot;:&quot;imageUrl3&quot;,&quot;description&quot;:&quot;description3&quot;,&quot;time&quot;:&quot;time3&quot;,&quot;stage&quot;:&quot;stage3&quot;}]} time is AM, PM or AM/PM stage is PREP, TREAT, or SEAL This must be in Normal JSON not Escaped.</description>
+        <name>Details</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

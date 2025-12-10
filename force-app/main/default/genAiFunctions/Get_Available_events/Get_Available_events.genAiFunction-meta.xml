@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>donner les informations des événements à venir de la métropole d&apos;angers</description>
+    <developerName>Get_Available_events</developerName>
+    <invocationTarget>Get_Available_events</invocationTarget>
+    <invocationTargetType>flow</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+    <masterLabel>Get Available events</masterLabel>
+</GenAiFunction>

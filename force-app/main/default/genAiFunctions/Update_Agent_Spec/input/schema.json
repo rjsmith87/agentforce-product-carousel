@@ -1,0 +1,22 @@
+{
+  "required" : [ "agentId", "newSpec" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "agentId" : {
+      "title" : "agentId",
+      "description" : "The ID of the agent to update, The recordId of the AgentDetail Record that was created in the AgentCreate_Deploy action",
+      "lightning:type" : "lightning__recordIdType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "newSpec" : {
+      "title" : "newSpec",
+      "description" : "The new requirements for the agent the user gave in the conversation",
+      "const" : "",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

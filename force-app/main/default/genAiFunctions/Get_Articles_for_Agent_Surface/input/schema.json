@@ -1,0 +1,14 @@
+{
+  "required" : [ "dummyInput" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "dummyInput" : {
+      "title" : "dummyInput",
+      "description" : "besoin des équipements prononcé par utilisateur",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

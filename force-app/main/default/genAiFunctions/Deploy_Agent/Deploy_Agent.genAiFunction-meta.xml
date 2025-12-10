@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Gemnerate Topics and deploy agent after the user verified the job descriptions</description>
+    <developerName>Deploy_Agent</developerName>
+    <invocationTarget>AgentCreate_Deploy</invocationTarget>
+    <invocationTargetType>apex</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+    <masterLabel>Deploy Agent</masterLabel>
+</GenAiFunction>

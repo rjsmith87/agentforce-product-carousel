@@ -1,0 +1,28 @@
+{
+  "required" : [ "description", "messagingEndUserContactId", "subject" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "description" : {
+      "title" : "description",
+      "description" : "This is the text that describes the newly created Case. Write this as a summary of the conversation with the user and the Agent.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "messagingEndUserContactId" : {
+      "title" : "messagingEndUserContactId",
+      "description" : "This is the Contact Id of the messaging user",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "subject" : {
+      "title" : "subject",
+      "description" : "This is the single line of text that describes the subject of the Case. Write this as a single sentence that describes the content of the conversation with the user and the Agent. Make this no longer than 255 characters.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

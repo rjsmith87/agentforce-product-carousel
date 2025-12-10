@@ -1,0 +1,49 @@
+{
+  "required" : [ "orderNumber" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "orderNumber" : {
+      "title" : "orderNumber",
+      "description" : "Stores the order number",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "shippingCity" : {
+      "title" : "shippingCity",
+      "description" : "the new shipping city to update the order with",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "shippingCountry" : {
+      "title" : "shippingCountry",
+      "description" : "the new shipping country to update the order with",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "shippingState" : {
+      "title" : "shippingState",
+      "description" : "the new shipping state to update the order with",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "shippingStreet" : {
+      "title" : "shippingStreet",
+      "description" : "the new shipping street to update the order with",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "shippingZip" : {
+      "title" : "shippingZip",
+      "description" : "the new shipping zip code to update the order with",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

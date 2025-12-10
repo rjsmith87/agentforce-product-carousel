@@ -1,0 +1,48 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "ContactDefaultMessageText" : {
+      "title" : "ContactDefaultMessageText",
+      "description" : "default message when the end-used account can't be verified based on inputs provided",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : true,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "VerificationMessageText" : {
+      "title" : "VerificationMessageText",
+      "description" : "details of the end-user that have been verified",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : true,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "rvarCase" : {
+      "title" : "rvarCase",
+      "description" : "details of the last case submitted by the end-user",
+      "lightning:type" : "lightning__recordInfoType",
+      "lightning:sObjectInfo" : {
+        "apiName" : "Case"
+      },
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "rvarContact" : {
+      "title" : "rvarContact",
+      "description" : "details of the end-user account that have been verified",
+      "lightning:type" : "lightning__recordInfoType",
+      "lightning:sObjectInfo" : {
+        "apiName" : "Contact"
+      },
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

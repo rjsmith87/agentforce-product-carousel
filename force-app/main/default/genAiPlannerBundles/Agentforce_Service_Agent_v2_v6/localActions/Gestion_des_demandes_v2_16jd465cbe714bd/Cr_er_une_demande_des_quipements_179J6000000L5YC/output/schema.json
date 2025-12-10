@@ -1,0 +1,47 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "ArticleOutputList" : {
+      "title" : "ArticleOutputList",
+      "description" : "Détails des articles demandés incluant le nom, le type, l'URL de l'image et le type MIME",
+      "maxItems" : 2000,
+      "items" : {
+        "lightning:type" : "lightning__recordInfoType",
+        "lightning:sObjectInfo" : {
+          "apiName" : "Articles__c"
+        }
+      },
+      "lightning:type" : "lightning__listType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : true,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "OutputList" : {
+      "title" : "OutputList",
+      "description" : "Details for articles options, article name, article type, image URL, and image MIME type",
+      "maxItems" : 2000,
+      "items" : {
+        "lightning:type" : "lightning__richTextType"
+      },
+      "lightning:type" : "lightning__listType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : true,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "caseRecord" : {
+      "title" : "caseRecord",
+      "description" : "Stores the case record created by the customer.",
+      "lightning:type" : "lightning__recordInfoType",
+      "lightning:sObjectInfo" : {
+        "apiName" : "Case"
+      },
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : true,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

@@ -1,0 +1,15 @@
+{
+  "required" : [ "date" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "date" : {
+      "title" : "date",
+      "description" : "Période souhaité pour des événements à venir de la metropole d'Angers",
+      "lightning:type" : "lightning__dateType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType",
+  "lightning:textIndexed" : true
+}

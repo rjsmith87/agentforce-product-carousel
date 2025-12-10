@@ -1,0 +1,56 @@
+{
+  "required" : [ "customerEmail" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "customerEmail" : {
+      "title" : "customerEmail",
+      "description" : "Stores the email address of the customer",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "itemToShip" : {
+      "title" : "itemToShip",
+      "description" : "The product associated with the order",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "shippingCity" : {
+      "title" : "shippingCity",
+      "description" : "Shipping destination - city",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "shippingCountry" : {
+      "title" : "shippingCountry",
+      "description" : "Shipping destination - country",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "shippingState" : {
+      "title" : "shippingState",
+      "description" : "Shipping destination - state",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "shippingStreet" : {
+      "title" : "shippingStreet",
+      "description" : "Shipping destination - street",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "shippingZip" : {
+      "title" : "shippingZip",
+      "description" : "Shipping destination - zip",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

@@ -1,0 +1,14 @@
+{
+  "required" : [ "IndividualName" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "IndividualName" : {
+      "title" : "IndividualName",
+      "description" : "Given an individual's name, lookup the account ID associated with this individual. Use this flow over the standard action to \"Identify Record by Name\" when trying to find an individual.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

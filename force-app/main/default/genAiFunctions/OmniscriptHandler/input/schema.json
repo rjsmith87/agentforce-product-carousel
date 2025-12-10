@@ -1,0 +1,28 @@
+{
+  "required" : [ "osLanguage", "osSubType", "osType" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "osLanguage" : {
+      "title" : "osLanguage",
+      "description" : "Language of Omniscript",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "osSubType" : {
+      "title" : "osSubType",
+      "description" : "SubType of Omniscript",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "osType" : {
+      "title" : "osType",
+      "description" : "Type of Omniscript",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

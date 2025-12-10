@@ -1,0 +1,24 @@
+{
+  "required" : [ "Case", "StartDate" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "Case" : {
+      "title" : "Case",
+      "description" : "Use the Case ID provided in the Query action as the input for the Case",
+      "lightning:type" : "lightning__recordInfoType",
+      "lightning:sObjectInfo" : {
+        "apiName" : "Case"
+      },
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "StartDate" : {
+      "title" : "StartDate",
+      "description" : "Request input for StartDate",
+      "lightning:type" : "lightning__dateType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

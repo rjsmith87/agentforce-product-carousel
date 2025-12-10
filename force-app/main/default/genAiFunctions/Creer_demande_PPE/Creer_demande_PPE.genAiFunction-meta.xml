@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Créer une demande d&apos;équipements de protection individuelle (EPI) pour l&apos;agent. Crée un Case et les articles demandés, retourne les images en format carrousel.</description>
+    <developerName>Creer_demande_PPE</developerName>
+    <invocationTarget>CreatePPEArticlesFromJSON</invocationTarget>
+    <invocationTargetType>apex</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+    <localDeveloperName>Creer_demande_PPE</localDeveloperName>
+    <masterLabel>Créer demande PPE</masterLabel>
+</GenAiFunction>

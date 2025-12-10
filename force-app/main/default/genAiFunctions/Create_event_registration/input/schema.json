@@ -1,0 +1,21 @@
+{
+  "required" : [ "Contact_Id", "Event_name" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "Contact_Id" : {
+      "title" : "Contact_Id",
+      "description" : "The Id of a Contact record that you would like to create the event registration for.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "Event_name" : {
+      "title" : "Event_name",
+      "description" : "The Event is an ID for the Event__c record that you would like book for a contact.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

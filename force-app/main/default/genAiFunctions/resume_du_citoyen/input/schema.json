@@ -1,0 +1,24 @@
+{
+  "required" : [ "Input:Account" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "Input:Account" : {
+      "title" : "objectToSummarize",
+      "description" : "nom du contact",
+      "lightning:type" : "lightning__recordInfoType",
+      "lightning:sObjectInfo" : {
+        "apiName" : "Account"
+      },
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "citationMode" : {
+      "title" : "Citation Mode",
+      "description" : "Select Citation Mode",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}
