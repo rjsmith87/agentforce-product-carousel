@@ -6,7 +6,7 @@
     <isEnabled>true</isEnabled>
     <isTermsAndConditionsEnabled>false</isTermsAndConditionsEnabled>
     <isTermsAndConditionsRequired>false</isTermsAndConditionsRequired>
-    <masterLabel>Sophie V1 Chat</masterLabel>
+    <masterLabel>ProductCatalog V1 Chat</masterLabel>
     <shouldHideAuthDialog>false</shouldHideAuthDialog>
     <site>Grantmaking</site>
 </EmbeddedServiceConfig>

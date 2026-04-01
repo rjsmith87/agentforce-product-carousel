@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Confirmation Commande PPE</title>
+    <title>Order Confirmation</title>
     <apex:slds />
     <style>
         body { font-family: 'Salesforce Sans', Arial, sans-serif; background: #f4f6f9; margin: 0; padding: 2rem; }
@@ -24,46 +24,46 @@
 <body>
     <div class="container">
         <div class="test-info">
-            <strong>Test Sophie:</strong>
-            <code>Je souhaite commander une blouse de travail, taille S, quantité 5</code>
-            <code>Email: rsmith2@salesforce.com</code>
+            <strong>Test:</strong>
+            <code>Order a work blouse, size S, quantity 5</code>
+            <code>Email: user@example.com</code>
         </div>
-        
+
         <div class="header">
-            <h1>✓ Commande Confirmée</h1>
-            <p>Numéro: <strong>{!caseNumber}</strong></p>
+            <h1>Order Confirmed</h1>
+            <p>Case Number: <strong>{!caseNumber}</strong></p>
         </div>
-        
+
         <div class="info-box">
-            <p><strong>Statut:</strong> {!orderStatus}</p>
+            <p><strong>Status:</strong> {!orderStatus}</p>
             <p><strong>Date:</strong> {!orderDate}</p>
         </div>
-        
-        <h2>Articles commandés</h2>
+
+        <h2>Ordered Items</h2>
         <div class="items-grid">
             <apex:repeat value="{!items}" var="item">
                 <div class="item-card">
                     <img src="{!item.imageUrl}" alt="{!item.name}"/>
                     <div class="item-details">
                         <h3>{!item.name}</h3>
-                        <p>Taille: {!item.size} • Quantité: {!item.quantity}</p>
+                        <p>Size: {!item.size} | Qty: {!item.quantity}</p>
                     </div>
                 </div>
             </apex:repeat>
         </div>
     </div>
 
-    <!-- Sophie Agent -->
+    <!-- Embedded Messaging Agent -->
     <script type='text/javascript'>
         function initEmbeddedMessaging() {
             try {
-                embeddedservice_bootstrap.settings.language = 'fr';
+                embeddedservice_bootstrap.settings.language = 'en';
                 embeddedservice_bootstrap.init(
-                    '00DJ6000000L9tj',
-                    'SDO_Messaging_for_Web',
-                    'https://kkarapysho-250422-613-demo.my.site.com/ESWSDOMessagingforWeb1745324985459',
+                    'YOUR_ORG_ID',
+                    'YOUR_MESSAGING_CONFIG',
+                    'https://YOUR_DOMAIN.my.site.com/YOUR_MESSAGING_PATH',
                     {
-                        scrt2URL: 'https://kkarapysho-250422-613-demo.my.salesforce-scrt.com'
+                        scrt2URL: 'https://YOUR_DOMAIN.my.salesforce-scrt.com'
                     }
                 );
             } catch (err) {
@@ -71,7 +71,7 @@
             }
         };
     </script>
-    <script type='text/javascript' src='https://kkarapysho-250422-613-demo.my.site.com/ESWSDOMessagingforWeb1745324985459/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+    <script type='text/javascript' src='https://YOUR_DOMAIN.my.site.com/YOUR_MESSAGING_PATH/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 </body>
 </html>
 </apex:page>

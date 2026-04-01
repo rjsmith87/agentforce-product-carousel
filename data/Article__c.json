@@ -8,7 +8,7 @@
             "Name": "Blouse haute visibilité classe 2",
             "Nom_de_l_article__c": "Blouse haute visibilité classe 2",
             "Image_Type__c": "image/jpeg",
-            "URL_Image__c": "https://kkarapysho-250422-613-demo--c.vf.force.com/resource/1764772639000/Blouse3"
+            "URL_Image__c": "https://YOUR_DOMAIN--c.vf.force.com/resource/1764772639000/Blouse3"
         },
         {
             "attributes": {
@@ -18,7 +18,7 @@
             "Name": "Chaussures légères et respirantes",
             "Nom_de_l_article__c": "Chaussures légères et respirantes",
             "Image_Type__c": "image/jpeg",
-            "URL_Image__c": "https://kkarapysho-250422-613-demo--c.vf.force.com/resource/1764773474000/Bottes3"
+            "URL_Image__c": "https://YOUR_DOMAIN--c.vf.force.com/resource/1764773474000/Bottes3"
         },
         {
             "attributes": {
@@ -28,7 +28,7 @@
             "Name": "Blouse de travail – Modèle Atelier Blanc",
             "Nom_de_l_article__c": "Blouse de travail",
             "Image_Type__c": "image/jpeg",
-            "URL_Image__c": "https://kkarapysho-250422-613-demo--c.vf.force.com/resource/1764606876000/Blouse"
+            "URL_Image__c": "https://YOUR_DOMAIN--c.vf.force.com/resource/1764606876000/Blouse"
         },
         {
             "attributes": {
@@ -38,7 +38,7 @@
             "Name": "Bottes de sécurité montantes S3",
             "Nom_de_l_article__c": "Bottes de sécurité montantes S3",
             "Image_Type__c": "image/jpeg",
-            "URL_Image__c": "https://kkarapysho-250422-613-demo--c.vf.force.com/resource/1764773213000/Bottes2"
+            "URL_Image__c": "https://YOUR_DOMAIN--c.vf.force.com/resource/1764773213000/Bottes2"
         },
         {
             "attributes": {
@@ -48,7 +48,7 @@
             "Name": "Bottes de sécurité plastique",
             "Nom_de_l_article__c": "Bottes de sécurité plastique",
             "Image_Type__c": "image/jpeg",
-            "URL_Image__c": "https://kkarapysho-250422-613-demo--c.vf.force.com/resource/1764606924000/Bottes"
+            "URL_Image__c": "https://YOUR_DOMAIN--c.vf.force.com/resource/1764606924000/Bottes"
         },
         {
             "attributes": {
@@ -58,7 +58,7 @@
             "Name": "Blouse de travail renforcée – Modèle Atlas R300",
             "Nom_de_l_article__c": "Blouse de travail renforcée – Modèle Atlas R300",
             "Image_Type__c": "image/jpeg",
-            "URL_Image__c": "https://kkarapysho-250422-613-demo--c.vf.force.com/resource/1764771847000/Blouse2"
+            "URL_Image__c": "https://YOUR_DOMAIN--c.vf.force.com/resource/1764771847000/Blouse2"
         }
     ]
 }

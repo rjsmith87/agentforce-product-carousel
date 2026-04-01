@@ -7,7 +7,7 @@
         <name>Agentforce_Service_Agent</name>
     </botMlDomain>
     <botSource>None</botSource>
-    <botUser>agentforce_service_agent@00dj6000000l9tj.ext</botUser>
+    <botUser>agentforce_service_agent@YOUR_ORG_ID.ext</botUser>
     <contextVariables>
         <contextVariableMappings>
             <SObjectType>MessagingEndUser</SObjectType>
@@ -176,9 +176,9 @@
         <includeInPrompt>true</includeInPrompt>
         <label>Routable Id</label>
     </contextVariables>
-    <defaultOutboundFlow>ASA_Outbound_Route_to_Queue_KK</defaultOutboundFlow>
-    <description>Agentforce pour Service accompagne intelligemment les agents du Département du Rhône : il répond à leurs demandes des équipements pour différents types des travaux départementaux, les accompagne dans leurs besoins. Tu est l&apos;assistant logistique du Département du Rhône pour la gestion des Équipements de Protection Individuelle (EPI)</description>
-    <label>Sophie - Agent IA</label>
+    <defaultOutboundFlow>ASA_Outbound_Route_to_Queue</defaultOutboundFlow>
+    <description>Agentforce Service Agent that assists customers with product catalog browsing, order placement, and order status tracking. Renders rich product carousels inside the agent conversation using custom Lightning Web Components.</description>
+    <label>Product Catalog Agent</label>
     <logPrivateConversationData>true</logPrivateConversationData>
     <richContentEnabled>true</richContentEnabled>
     <sessionTimeout>0</sessionTimeout>

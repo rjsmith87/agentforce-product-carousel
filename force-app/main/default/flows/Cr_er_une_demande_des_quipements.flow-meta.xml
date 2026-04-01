@@ -40,7 +40,7 @@
     </actionCalls>
     <apiVersion>63.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
-    <description>Création des demandes des équipements techniques pour les agents du Département du Rhône</description>
+    <description>Creates product order requests from customer input and returns carousel display data</description>
     <environments>Default</environments>
     <interviewLabel>Créer une demande des équipements {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Créer une demande des équipements</label>

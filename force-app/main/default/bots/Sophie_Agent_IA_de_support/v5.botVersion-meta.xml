@@ -5,7 +5,7 @@
     <botDialogs>
         <botSteps>
             <botMessages>
-                <message>Bonjour ! Je suis Sophie, votre agent IA de support. Comment puis-je vous aider aujourd’hui ?</message>
+                <message>Bonjour ! Je suis Product Catalog Agent, votre agent IA de support. Comment puis-je vous aider aujourd’hui ?</message>
                 <messageIdentifier>2b071ece-bed8-4f8c-8ce5-c58777642af2</messageIdentifier>
             </botMessages>
             <stepIdentifier>9b3184fc-2583-49a7-8077-eeb530ca51ce</stepIdentifier>
@@ -60,7 +60,7 @@
         <showInFooterMenu>false</showInFooterMenu>
     </botDialogs>
     <citationsEnabled>false</citationsEnabled>
-    <company>Atout France est l’agence de développement touristique de la France. Elle accompagne les territoires et les professionnels du tourisme dans leur stratégie, leur promotion et leurs projets de développement sur les marchés français et internationaux.</company>
+    <company>Demo Organization est l’agence de développement touristique de la France. Elle accompagne les territoires et les professionnels du tourisme dans leur stratégie, leur promotion et leurs projets de développement sur les marchés français et internationaux.</company>
     <conversationDefinitionPlanners>
         <genAiPlannerName>Agentforce_Service_Agent_v2_v5</genAiPlannerName>
     </conversationDefinitionPlanners>

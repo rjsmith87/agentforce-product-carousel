@@ -5,7 +5,7 @@
       "default": true
     }
   ],
-  "name": "ppe-debug",
+  "name": "agentforce-product-carousel",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "65.0"

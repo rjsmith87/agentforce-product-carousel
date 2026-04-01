@@ -12,7 +12,7 @@
     },
     "caseRecord" : {
       "title" : "caseRecord",
-      "description" : "The Case record created for the PPE request.",
+      "description" : "The Case record created for the Product request.",
       "lightning:type" : "lightning__recordInfoType",
       "lightning:sObjectInfo" : {
         "apiName" : "Case"
@@ -24,7 +24,7 @@
     },
     "ArticleOutputList" : {
       "title" : "ArticleOutputList",
-      "description" : "List of created article records (Articles__c) for the PPE request.",
+      "description" : "List of created article records (Articles__c) for the Product request.",
       "maxItems" : 2000,
       "items" : {
         "lightning:type" : "lightning__recordInfoType",

@@ -42,7 +42,7 @@ global class AgentforceREST {
                 enhancedMessage = '[Currently ordering: ' + activeProduct + '] ' + message;
             }
             
-            Invocable.Action action = Invocable.Action.createCustomAction('generateAiAgentResponse', 'Sophie_PPE_Assistant');
+            Invocable.Action action = Invocable.Action.createCustomAction('generateAiAgentResponse', 'Product_Catalog_Assistant');
             action.setInvocationParameter('sessionId', sessionId);
             action.setInvocationParameter('userMessage', enhancedMessage);
             List<Invocable.Action.Result> results = action.invoke();

@@ -14,8 +14,8 @@ public with sharing class PPECarouselAction {
     }
     
     @InvocableMethod(
-        label='Get PPE Products Carousel' 
-        description='Returns PPE products as a visual carousel with images and names.'
+        label='Get Products Carousel'
+        description='Returns products as a visual carousel with images and names.'
     )
     public static List<CarouselResponse> getProducts(List<CarouselRequest> requests) {
         CarouselRequest req = (requests != null && !requests.isEmpty()) ? requests[0] : new CarouselRequest();

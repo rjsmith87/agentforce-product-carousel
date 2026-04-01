@@ -13,7 +13,7 @@ public class GetPPEOrderStatus {
         public String orderStatusMessage;
     }
     
-    @InvocableMethod(label='Get PPE Order Status' description='Looks up PPE order status by case number or customer name')
+    @InvocableMethod(label='Get Product Order Status' description='Looks up product order status by case number or customer name')
     public static List<StatusResult> getStatus(List<StatusRequest> requests) {
         List<StatusResult> results = new List<StatusResult>();
         
@@ -27,11 +27,11 @@ public class GetPPEOrderStatus {
                     cases = [SELECT CaseNumber, Subject, Status, SuppliedName, CreatedDate 
                              FROM Case 
                              WHERE CaseNumber = :req.caseNumber 
-                             AND Type = 'PPE Order' 
+                             AND Type = 'Product Order'
                              LIMIT 1];
                     
                     if (cases.isEmpty()) {
-                        result.orderStatusMessage = 'No PPE order found with case number ' + req.caseNumber + '.';
+                        result.orderStatusMessage = 'No product order found with case number ' + req.caseNumber + '.';
                     } else {
                         Case c = cases[0];
                         result.orderStatusMessage = 'Order ' + c.CaseNumber + ' for ' + c.SuppliedName + ': ' + c.Subject + ' - Status: ' + c.Status;
@@ -40,12 +40,12 @@ public class GetPPEOrderStatus {
                     cases = [SELECT CaseNumber, Subject, Status, SuppliedName, CreatedDate 
                              FROM Case 
                              WHERE SuppliedName = :req.customerName 
-                             AND Type = 'PPE Order' 
+                             AND Type = 'Product Order'
                              ORDER BY CreatedDate DESC 
                              LIMIT 5];
                     
                     if (cases.isEmpty()) {
-                        result.orderStatusMessage = 'No PPE orders found for ' + req.customerName + '.';
+                        result.orderStatusMessage = 'No product orders found for ' + req.customerName + '.';
                     } else if (cases.size() == 1) {
                         Case c = cases[0];
                         result.orderStatusMessage = 'Order ' + c.CaseNumber + ' for ' + c.SuppliedName + ': ' + c.Subject + ' - Status: ' + c.Status;

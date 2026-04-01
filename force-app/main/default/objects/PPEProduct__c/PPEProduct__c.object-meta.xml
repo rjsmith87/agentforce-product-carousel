@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <deploymentStatus>Deployed</deploymentStatus>
-    <label>PPE Product</label>
+    <label>Product Product</label>
     <nameField>
         <label>Product Name</label>
         <type>Text</type>
     </nameField>
-    <pluralLabel>PPE Products</pluralLabel>
+    <pluralLabel>Product Products</pluralLabel>
     <sharingModel>ReadWrite</sharingModel>
 </CustomObject>

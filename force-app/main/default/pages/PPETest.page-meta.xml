@@ -3,5 +3,5 @@
     <apiVersion>62.0</apiVersion>
     <availableInTouch>true</availableInTouch>
     <confirmationTokenRequired>false</confirmationTokenRequired>
-    <label>PPE Test</label>
+    <label>Product Test</label>
 </ApexPage>

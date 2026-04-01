@@ -141,7 +141,7 @@ public without sharing class CreatePPEArticlesFromJSON {
     }
 
     // ===== MAIN INVOCABLE ENTRYPOINT =====
-    @InvocableMethod(label='Create PPE Articles from JSON' description='Creates a Case and Article demandé records from a JSON payload, returns carousel data for display')
+    @InvocableMethod(label='Create Product Articles from JSON' description='Creates a Case and Article records from a JSON payload, returns carousel data for display')
     public static List<OutputWrapper> createArticles(List<InputWrapper> inputs) {
 
         List<OutputWrapper> results = new List<OutputWrapper>();
@@ -200,7 +200,7 @@ public without sharing class CreatePPEArticlesFromJSON {
         Case newCase = new Case();
         newCase.Status = 'New';
         newCase.Priority = 'High';
-        newCase.Subject = 'Demande EPI';
+        newCase.Subject = 'Product Order Request';
         newCase.Commentaires__c = input.caseDescription;
         
         if (accountId != null) {
@@ -215,7 +215,7 @@ public without sharing class CreatePPEArticlesFromJSON {
         
         // Set default Site affectation if field exists
         try {
-            newCase.put('Site_affectation__c', '001J600000Dts5BIAR');
+            newCase.put('Site_affectation__c', 'YOUR_SITE_RECORD_ID');
         } catch (Exception e) {
             // Field may not exist, continue
         }

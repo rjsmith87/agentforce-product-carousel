@@ -33,7 +33,7 @@ public class CreatePPEOrder {
         public String caseId;
     }
     
-    @InvocableMethod(label='Create PPE Order' description='Creates a Case for a PPE order with product, size, quantity, and customer name')
+    @InvocableMethod(label='Create Product Order' description='Creates a Case for a product order with product, size, quantity, and customer name')
     public static List<OrderResult> createOrder(List<OrderRequest> requests) {
         List<OrderResult> results = new List<OrderResult>();
         
@@ -84,8 +84,8 @@ public class CreatePPEOrder {
                     'Size: ' + sizeValue;
                 
                 Case orderCase = new Case(
-                    Subject = 'PPE Order: ' + req.quantity.intValue() + 'x ' + product.Name,
-                    Type = 'PPE Order',
+                    Subject = 'Product Order: ' + req.quantity.intValue() + 'x ' + product.Name,
+                    Type = 'Product Order',
                     Status = 'New',
                     Origin = 'Chat',
                     Description = description,
