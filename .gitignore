@@ -49,6 +49,12 @@ $RECYCLE.BIN/
 # Husky
 .husky/
 
+# Heroku artifacts (not used)
+Procfile
+app.py
+requirements.txt
+runtime.txt
+
 # Python Salesforce Functions
 **/__pycache__/
 **/.venv/

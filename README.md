@@ -88,10 +88,10 @@ The result: when the agent returns an `AsaCarouselData` object in a conversation
   |  Agent calls invocable Apex action                          |
   |                                                             |
   |  +-------------------------------------------------------+  |
-  |  |  PPECarouselAction.cls (@InvocableMethod)              |  |
+  |  |  ProductCarouselAction.cls (@InvocableMethod)           |  |
   |  |                                                        |  |
   |  |  SELECT Id, Name, ImageURL__c, Category__c             |  |
-  |  |  FROM PPEProduct__c                                    |  |
+  |  |  FROM Product__c                                       |  |
   |  |  WHERE InStock__c = true                               |  |
   |  |  AND Name LIKE '%boot%'                                |  |
   |  |                                                        |  |
@@ -191,10 +191,10 @@ Both renderers point to the same `c/asaCarousel` LWC. The component itself is su
 | Class | Purpose |
 |:------|:--------|
 | `AsaCarouselData.cls` | Lightning Type backing class — the data envelope |
-| `PPECarouselAction.cls` | Invocable action: queries product catalog, returns carousel data |
-| `CreatePPEOrder.cls` | Invocable action: creates order Cases with size validation |
-| `CreatePPEArticlesFromJSON.cls` | Parses JSON payloads, normalizes names/sizes, creates records |
-| `GetPPEOrderStatus.cls` | Invocable action: order status lookup by case number or name |
+| `ProductCarouselAction.cls` | Invocable action: queries product catalog, returns carousel data |
+| `CreateProductOrder.cls` | Invocable action: creates order Cases with size validation |
+| `CreateProductArticlesFromJSON.cls` | Parses JSON payloads, normalizes names/sizes, creates records |
+| `GetProductOrderStatus.cls` | Invocable action: order status lookup by case number or name |
 | `AgentforceREST.cls` | REST endpoint with product keyword detection |
 
 ### Lightning Web Components
@@ -202,7 +202,7 @@ Both renderers point to the same `c/asaCarousel` LWC. The component itself is su
 | Component | Purpose |
 |:----------|:--------|
 | `asaCarousel` | Product carousel with image cards, arrow nav, dot indicators |
-| `ppeOrderConfirmation` | Order confirmation grid with item details |
+| `orderConfirmation` | Order confirmation grid with item details |
 
 ---
 
@@ -214,7 +214,7 @@ agentforce-product-carousel/
 │   ├── classes/                    # Apex invocable actions + REST endpoint
 │   ├── lwc/
 │   │   ├── asaCarousel/            # The carousel component (JS, HTML, CSS)
-│   │   └── ppeOrderConfirmation/   # Order confirmation component
+│   │   └── orderConfirmation/      # Order confirmation component
 │   ├── bots/                       # Agentforce agent configuration
 │   ├── flows/                      # Format_Output, order flows
 │   ├── genAiFunctions/             # Agent action definitions
