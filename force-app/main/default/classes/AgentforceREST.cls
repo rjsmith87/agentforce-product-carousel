@@ -1,5 +1,5 @@
 @RestResource(urlMapping='/agentforce/*')
-global class AgentforceREST {
+global with sharing class AgentforceREST {
     
     private static final Map<String, String> PRODUCT_KEYWORDS = new Map<String, String>{
         'glove' => 'Work Gloves',

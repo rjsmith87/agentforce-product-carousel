@@ -1,4 +1,4 @@
-public class GetPPEOrderStatus {
+public with sharing class GetPPEOrderStatus {
     
     public class StatusRequest {
         @InvocableVariable(label='Case Number')
@@ -24,10 +24,11 @@ public class GetPPEOrderStatus {
                 List<Case> cases;
                 
                 if (String.isNotBlank(req.caseNumber)) {
-                    cases = [SELECT CaseNumber, Subject, Status, SuppliedName, CreatedDate 
-                             FROM Case 
-                             WHERE CaseNumber = :req.caseNumber 
+                    cases = [SELECT CaseNumber, Subject, Status, SuppliedName, CreatedDate
+                             FROM Case
+                             WHERE CaseNumber = :req.caseNumber
                              AND Type = 'Product Order'
+                             WITH SECURITY_ENFORCED
                              LIMIT 1];
                     
                     if (cases.isEmpty()) {
@@ -37,11 +38,12 @@ public class GetPPEOrderStatus {
                         result.orderStatusMessage = 'Order ' + c.CaseNumber + ' for ' + c.SuppliedName + ': ' + c.Subject + ' - Status: ' + c.Status;
                     }
                 } else if (String.isNotBlank(req.customerName)) {
-                    cases = [SELECT CaseNumber, Subject, Status, SuppliedName, CreatedDate 
-                             FROM Case 
-                             WHERE SuppliedName = :req.customerName 
+                    cases = [SELECT CaseNumber, Subject, Status, SuppliedName, CreatedDate
+                             FROM Case
+                             WHERE SuppliedName = :req.customerName
                              AND Type = 'Product Order'
-                             ORDER BY CreatedDate DESC 
+                             WITH SECURITY_ENFORCED
+                             ORDER BY CreatedDate DESC
                              LIMIT 5];
                     
                     if (cases.isEmpty()) {

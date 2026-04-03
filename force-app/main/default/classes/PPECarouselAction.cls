@@ -36,7 +36,7 @@ public with sharing class PPECarouselAction {
             query += ' AND (Name LIKE \'' + searchPattern + '\' OR Description__c LIKE \'' + searchPattern + '\')';
         }
         
-        query += ' ORDER BY Category__c, Name LIMIT 20';
+        query += ' WITH SECURITY_ENFORCED ORDER BY Category__c, Name LIMIT 20';
         
         List<PPEProduct__c> products = Database.query(query);
         

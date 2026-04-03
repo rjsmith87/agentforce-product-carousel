@@ -12,7 +12,7 @@
  * }
  */
 @JsonAccess(serializable='always' deserializable='always')
-global class AsaCarouselData {
+global with sharing class AsaCarouselData {
     
     @AuraEnabled
     global String productCarouselJSON;

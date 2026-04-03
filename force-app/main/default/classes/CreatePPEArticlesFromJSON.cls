@@ -1,4 +1,4 @@
-public without sharing class CreatePPEArticlesFromJSON {
+public with sharing class CreatePPEArticlesFromJSON {
 
     // ===== INPUT FROM AGENT ACTION =====
     public class InputWrapper {
@@ -172,6 +172,7 @@ public without sharing class CreatePPEArticlesFromJSON {
             SELECT Id, PersonContactId, PersonEmail, Name
             FROM Account
             WHERE PersonEmail = :input.customerEmail
+            WITH SECURITY_ENFORCED
             LIMIT 1
         ];
         
@@ -186,9 +187,10 @@ public without sharing class CreatePPEArticlesFromJSON {
         // ===== STEP 2: Get Queue =====
         Id queueId = null;
         List<Group> queues = [
-            SELECT Id 
-            FROM Group 
+            SELECT Id
+            FROM Group
             WHERE Name = 'General' AND Type = 'Queue'
+            WITH SECURITY_ENFORCED
             LIMIT 1
         ];
         
@@ -213,6 +215,9 @@ public without sharing class CreatePPEArticlesFromJSON {
             newCase.OwnerId = queueId;
         }
         
+        if (!Schema.sObjectType.Case.isCreateable()) {
+            throw new AuraHandledException('Insufficient permissions to create Case records.');
+        }
         insert newCase;
         result.caseRecord = newCase;
 
@@ -242,6 +247,7 @@ public without sharing class CreatePPEArticlesFromJSON {
                 SELECT Id, Nom_de_l_article__c, Image_Type__c, URL_Image__c
                 FROM Article__c
                 WHERE Nom_de_l_article__c IN :normalizedArticleNames
+                WITH SECURITY_ENFORCED
             ]) {
                 articleByName.put(art.Nom_de_l_article__c, art);
             }
@@ -286,6 +292,9 @@ public without sharing class CreatePPEArticlesFromJSON {
 
         Set<Id> insertedIds = new Set<Id>();
         if (!toInsert.isEmpty()) {
+            if (!Schema.sObjectType.Articles__c.isCreateable()) {
+                throw new AuraHandledException('Insufficient permissions to create Articles__c records.');
+            }
             insert toInsert;
             for (Articles__c rec : toInsert) {
                 insertedIds.add(rec.Id);
@@ -295,7 +304,7 @@ public without sharing class CreatePPEArticlesFromJSON {
         // ===== STEP 7: Build AsaCarouselData for V2 Messaging =====
         if (!insertedIds.isEmpty()) {
             List<Articles__c> createdArticles = [
-                SELECT Id, 
+                SELECT Id,
                        Article_Nom1__r.Nom_de_l_article__c,
                        Article_Nom1__r.Image_Type__c,
                        Article_Nom1__r.URL_Image__c,
@@ -303,6 +312,7 @@ public without sharing class CreatePPEArticlesFromJSON {
                        quantite__c
                 FROM Articles__c
                 WHERE Id IN :insertedIds
+                WITH SECURITY_ENFORCED
             ];
             
             result.ArticleOutputList = createdArticles;
