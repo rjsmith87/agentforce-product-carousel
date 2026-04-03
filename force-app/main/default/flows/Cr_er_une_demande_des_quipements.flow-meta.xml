@@ -38,7 +38,7 @@
         </outputParameters>
         <storeOutputAutomatically>false</storeOutputAutomatically>
     </actionCalls>
-    <apiVersion>63.0</apiVersion>
+    <apiVersion>62.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <description>Creates product order requests from customer input and returns carousel display data</description>
     <environments>Default</environments>
@@ -71,14 +71,6 @@
         </connector>
     </start>
     <status>Active</status>
-    <variables>
-        <description>nom des articles pour lesquels il souhaite faire sa demande</description>
-        <name>articlename</name>
-        <dataType>String</dataType>
-        <isCollection>false</isCollection>
-        <isInput>true</isInput>
-        <isOutput>false</isOutput>
-    </variables>
     <variables>
         <description>Stores the details of the user issue to be used for the case.</description>
         <name>casedesciption</name>

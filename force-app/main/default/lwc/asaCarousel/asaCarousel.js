@@ -3,14 +3,14 @@
  * Displays products in a carousel format with navigation
  * Receives data from Flow via Lightning Type
  */
-import { LightningElement, api, track } from 'lwc';
+import { LightningElement, api } from 'lwc';
 
 export default class AsaCarousel extends LightningElement {
     @api value; // Receives AsaCarouselData object from Lightning Type
     
-    @track currentIndex = 0;
-    @track errorMessage = '';
-    @track products = [];
+    currentIndex = 0;
+    errorMessage = '';
+    products = [];
     
     /**
      * Lifecycle hook - parses JSON data from Flow
@@ -28,17 +28,13 @@ export default class AsaCarousel extends LightningElement {
                         time: this.mapTimeToSymbol(product.time), // Convert AM/PM to symbols
                         stage: product.stage || '' // PREP, TREAT, or SEAL
                     }));
-                    console.log('ASA Carousel loaded with', this.products.length, 'products from Flow');
                 } else {
                     this.errorMessage = 'No products available';
-                    console.log('ASA Carousel: No products in data');
                 }
             } else {
                 this.errorMessage = 'No data provided';
-                console.log('ASA Carousel: No value provided');
             }
         } catch (error) {
-            console.error('ASA Carousel error parsing data:', error.message);
             this.errorMessage = 'Error loading products';
         }
     }
@@ -76,13 +72,6 @@ export default class AsaCarousel extends LightningElement {
      */
     get isLastCard() {
         return this.currentIndex === this.products.length - 1;
-    }
-    
-    /**
-     * Get card counter text (e.g., "1 / 3")
-     */
-    get cardCounter() {
-        return `${this.currentIndex + 1} / ${this.products.length}`;
     }
     
     /**

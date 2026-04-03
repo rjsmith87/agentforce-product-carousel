@@ -1,13 +1,13 @@
-import { LightningElement, api, wire, track } from 'lwc';
+import { LightningElement, api, wire } from 'lwc';
 import getOrderDetails from '@salesforce/apex/PPEOrderConfirmationController.getOrderDetails';
 
 export default class PpeOrderConfirmation extends LightningElement {
     @api recordId; // For use on record pages
     @api caseId;   // For URL parameter or manual setting
     
-    @track orderData = {};
-    @track error;
-    @track isLoading = true;
+    orderData = {};
+    error;
+    isLoading = true;
 
     get effectiveCaseId() {
         return this.caseId || this.recordId || this.getUrlParameter('caseId');
@@ -57,7 +57,6 @@ export default class PpeOrderConfirmation extends LightningElement {
             .catch(error => {
                 this.error = error;
                 this.isLoading = false;
-                console.error('Error loading order:', error);
             });
     }
 
