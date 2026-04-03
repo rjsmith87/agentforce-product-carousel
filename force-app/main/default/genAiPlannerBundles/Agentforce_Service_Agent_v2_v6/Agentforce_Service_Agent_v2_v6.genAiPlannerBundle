@@ -291,9 +291,6 @@ Utilise cette rubrique même si l’usager s’exprime en anglais, par exemple :
             <functionName>Chercher_les_demandes_usagers_179d82f189cd94f</functionName>
         </localActionLinks>
         <localActionLinks>
-            <functionName>Answer_Questions_from_Dijon_website_17963e13c4924dc</functionName>
-        </localActionLinks>
-        <localActionLinks>
             <functionName>Cr_er_une_demande_des_quipements_179J6000000L5YC</functionName>
         </localActionLinks>
         <localActionLinks>
@@ -302,18 +299,6 @@ Utilise cette rubrique même si l’usager s’exprime en anglais, par exemple :
         <localActionLinks>
             <functionName>AddCaseComment_179J6000000L5YC</functionName>
         </localActionLinks>
-        <localActions>
-            <fullName>Answer_Questions_from_Dijon_website_17963e13c4924dc</fullName>
-            <description>Répond aux questions des usagers sur les démarches administratives de la vie courante (actes d’état civil, cartes d’identité, passeports, attestation d&apos;accueil) de l&apos;urbanisme et habitat (permis de construire, autorisations de travaux, règles locales d’urbanisme), des services municipaux (horaires des services, fonctionnement des équipements publics), des aides sociales et démarches solidaires (logement social, aides financières locales), des événements et vie associative (inscriptions aux événements culturels, manifestations locales), de l&apos;enfance et scolarité (inscriptions scolaires, cantines, périscolaire).</description>
-            <developerName>Answer_Questions_from_Dijon_website_17963e13c4924dc</developerName>
-            <invocationTarget>AADijonsite</invocationTarget>
-            <invocationTargetType>apex</invocationTargetType>
-            <isConfirmationRequired>false</isConfirmationRequired>
-            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
-            <localDeveloperName>Answer_Questions_from_Dijon_website</localDeveloperName>
-            <masterLabel>Answer Questions from Dijon website</masterLabel>
-            <source>Answer_Questions_from_Dijon_website</source>
-        </localActions>
         <localActions>
             <fullName>GetAllCasesForContact_179524e23d7a93c</fullName>
             <description>Returns a list of cases related to a given Contact record.</description>
@@ -448,7 +433,7 @@ Utilise cette rubrique même si l’usager s’exprime en anglais, par exemple :
         </localActionLinks>
         <localActions>
             <fullName>Get_Available_events_179ffa034b43e04</fullName>
-            <description>donner les informations des événements à venir de la métropole d&apos;angers</description>
+            <description>Get information about upcoming events</description>
             <developerName>Get_Available_events_179ffa034b43e04</developerName>
             <invocationTarget>Get_Available_events</invocationTarget>
             <invocationTargetType>flow</invocationTargetType>

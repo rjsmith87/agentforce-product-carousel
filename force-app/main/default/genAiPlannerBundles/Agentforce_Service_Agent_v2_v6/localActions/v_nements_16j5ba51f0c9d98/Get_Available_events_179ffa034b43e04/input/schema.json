@@ -4,7 +4,7 @@
   "properties" : {
     "date" : {
       "title" : "date",
-      "description" : "Période souhaité pour des événements à venir de la metropole d'Angers",
+      "description" : "Desired period for upcoming events",
       "lightning:type" : "lightning__dateType",
       "lightning:isPII" : false,
       "copilotAction:isUserInput" : false

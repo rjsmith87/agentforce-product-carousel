@@ -213,13 +213,6 @@ public without sharing class CreatePPEArticlesFromJSON {
             newCase.OwnerId = queueId;
         }
         
-        // Set default Site affectation if field exists
-        try {
-            newCase.put('Site_affectation__c', 'YOUR_SITE_RECORD_ID');
-        } catch (Exception e) {
-            // Field may not exist, continue
-        }
-
         insert newCase;
         result.caseRecord = newCase;
 

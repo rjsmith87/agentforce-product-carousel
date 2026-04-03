@@ -37,8 +37,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>PPEProduct__c.AvailableSizes__c</field>
         <readable>true</readable>
     </fieldPermissions>
